@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sedona Retreat | Chinh's Birthday 2026</title>
+    <title>Chinh's Birthday Trip · Sedona</title>
+    <meta name="description" content="Chinh's Birthday Trip to Sedona, October 23-26, 2026. A spiritual wellness and family retreat celebrating her birthday on Saturday, October 24.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -84,10 +85,18 @@
         }
 
         header .subtitle {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--text-secondary);
             font-weight: 400;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .birthday-line {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--accent-orchid);
+            margin-bottom: 1.25rem;
         }
 
         .header-details {
@@ -105,6 +114,16 @@
             text-decoration: underline;
             text-decoration-color: var(--dusty-rose);
             text-underline-offset: 2px;
+        }
+
+        .birthday-wish {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--text-heading);
+            margin-top: 1.25rem;
+            margin-bottom: 0;
         }
 
         /* Navigation */
@@ -186,42 +205,47 @@
         /* Chinh's Sessions - Featured Section with deep plum background */
         .sessions-box {
             background: var(--deep-plum-bg);
-            padding: 1.75rem;
+            padding: 2rem 1.75rem;
             margin-bottom: 1rem;
+            margin-top: 1rem;
             position: relative;
         }
 
         .sessions-floral-corner {
             position: absolute;
-            width: 75px;
+            width: 65px;
             height: auto;
         }
 
         .sessions-floral-corner.top-left {
-            top: -8px;
-            left: -8px;
+            top: 8px;
+            left: 8px;
         }
 
         .sessions-floral-corner.bottom-right {
-            bottom: -8px;
-            right: -8px;
+            bottom: 8px;
+            right: 8px;
             transform: rotate(180deg);
         }
 
         .sessions-box h3 {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             font-weight: 600;
             color: var(--cream-text);
             text-align: center;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.4rem;
+            position: relative;
+            z-index: 1;
         }
 
         .sessions-box .sessions-subtitle {
-            font-size: 0.85rem;
-            color: rgba(251, 243, 234, 0.8);
+            font-size: 0.9rem;
+            color: rgba(251, 243, 234, 0.85);
             text-align: center;
             margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         .session-item {
@@ -641,6 +665,14 @@
             color: var(--text-secondary);
         }
 
+        footer .footer-love {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-top: 0.75rem;
+        }
+
         /* Smooth scroll */
         html {
             scroll-behavior: smooth;
@@ -753,13 +785,15 @@
             <path d="M60 6c-6 0-10 5-10 11s4 11 10 11c-4-2.5-6-6-6-11s2-8.5 6-11z" stroke="#8B6080" stroke-width="1.5" fill="none"/>
         </svg>
 
-        <h1>Sedona Spiritual Wellness & Family Retreat</h1>
-        <p class="subtitle">A birthday trip for Chinh</p>
+        <h1>Chinh's Birthday Trip</h1>
+        <p class="subtitle">Sedona Spiritual Wellness & Family Retreat</p>
+        <p class="birthday-line">Her birthday is Saturday, October 24</p>
         <div class="header-details">
             <strong>Oct 23–26, 2026</strong><br>
-            Chinh, Craig, Marin & Companion<br>
+            Chinh, Craig, Marin & Deenah<br>
             <a href="https://www.google.com/maps/search/?api=1&query=100+Amara+Lane,+Sedona,+AZ+86336">Amara Resort & Spa, Sedona</a>
         </div>
+        <p class="birthday-wish">Happy Birthday, Chinh</p>
     </header>
 
     <nav>
@@ -1108,7 +1142,7 @@
         <section id="day2">
             <div class="day-card">
                 <div class="day-header birthday">
-                    <div class="day-label">Day 2 — Chinh's Birthday</div>
+                    <div class="day-label">Day 2 · Chinh's Birthday</div>
                     <div class="day-date">Saturday, October 24</div>
                     <div class="day-theme">Tlaquepaque, Healing Sessions & Birthday Dinner</div>
                 </div>
@@ -1553,6 +1587,7 @@
         
         <p>Happy Birthday, Chinh</p>
         <div class="footer-dates">October 23–26, 2026 · Sedona, Arizona</div>
+        <div class="footer-love">Made with love for Chinh's birthday.</div>
     </footer>
 
     <script>
