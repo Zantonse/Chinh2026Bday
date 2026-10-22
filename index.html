@@ -62,10 +62,11 @@
         /* Header */
         header {
             background: var(--warm-white);
-            padding: 1.75rem 1.5rem 2.25rem;
+            padding: 2.5rem 1.5rem 2.25rem;
             text-align: center;
             border-bottom: 1px solid var(--hairline);
             position: relative;
+            overflow: visible;
         }
 
         .header-illustration {
@@ -73,6 +74,7 @@
             margin: 0 auto 1.25rem;
             width: 240px;
             height: auto;
+            overflow: visible;
         }
 
         header h1 {
@@ -221,26 +223,28 @@
         /* Chinh's Sessions - Featured Section with deep plum background */
         .sessions-box {
             background: var(--deep-plum-bg);
-            padding: 2rem 1.75rem;
+            padding: 2.25rem 1.25rem 1.75rem;
             margin-bottom: 1rem;
             margin-top: 1rem;
             position: relative;
+            overflow: hidden;
         }
 
         .sessions-floral-corner {
             position: absolute;
-            width: 65px;
+            width: 48px;
             height: auto;
+            pointer-events: none;
         }
 
         .sessions-floral-corner.top-left {
-            top: 8px;
-            left: 8px;
+            top: 6px;
+            left: 4px;
         }
 
         .sessions-floral-corner.bottom-right {
-            bottom: 8px;
-            right: 8px;
+            bottom: 6px;
+            right: 4px;
             transform: rotate(180deg);
         }
 
@@ -250,7 +254,7 @@
             font-weight: 600;
             color: var(--cream-text);
             text-align: center;
-            margin-bottom: 0.4rem;
+            margin: 0 2.75rem 0.4rem;
             position: relative;
             z-index: 1;
         }
@@ -259,7 +263,7 @@
             font-size: 0.9rem;
             color: rgba(251, 243, 234, 0.85);
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin: 0 2.75rem 1.5rem;
             position: relative;
             z-index: 1;
         }
@@ -759,12 +763,222 @@
             margin-top: 0;
             padding-top: 1rem;
         }
+
+        /* Secret planning page */
+        #for-craig-and-deenah {
+            margin-top: 0;
+            padding-top: 1rem;
+            background: var(--lavender-light);
+            margin-left: -1.25rem;
+            margin-right: -1.25rem;
+            padding: 1.5rem 1.25rem 2rem;
+            min-height: 60vh;
+        }
+
+        .secret-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .secret-header h2 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0.25rem;
+        }
+
+        .secret-header .secret-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .secret-intro {
+            background: var(--deep-plum-bg);
+            color: var(--cream-text);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.25rem;
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .secret-intro strong {
+            font-weight: 600;
+        }
+
+        .secret-intro a {
+            color: var(--cream-text);
+            text-decoration: underline;
+        }
+
+        .planning-lead {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .planning-card {
+            background: var(--warm-white);
+            border: 1px solid var(--hairline);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .planning-card h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-heading);
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--hairline-light);
+        }
+
+        .planning-card ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .planning-card li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--text-body);
+        }
+
+        .planning-card li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.65rem;
+            width: 0.7em;
+            height: 0.7em;
+            border: 1px solid var(--accent-orchid);
+        }
+
+        .planning-callout {
+            background: var(--dusty-rose);
+            padding: 0.65rem 0.85rem;
+            font-size: 0.85rem;
+            color: var(--text-body);
+            margin-bottom: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .vendor-option {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--hairline-light);
+        }
+
+        .vendor-option:last-child {
+            border-bottom: none;
+        }
+
+        .vendor-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-body);
+            margin-bottom: 0.2rem;
+        }
+
+        .vendor-name a {
+            color: var(--accent-orchid);
+        }
+
+        .vendor-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        .vendor-note {
+            font-size: 0.8rem;
+            color: var(--text-body);
+            margin-top: 0.25rem;
+        }
+
+        .placeholder-list {
+            background: var(--blush-light);
+            border: 1px dashed var(--dusty-rose);
+            padding: 0.75rem 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .placeholder-list-title {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--accent-orchid);
+            margin-bottom: 0.35rem;
+        }
+
+        .placeholder-list-content {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .task-table th {
+            background: var(--dusty-rose);
+            color: var(--text-body);
+            font-weight: 600;
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+
+        .task-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid var(--hairline-light);
+            vertical-align: top;
+        }
+
+        .task-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .close-secret {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--dusty-rose);
+            color: var(--text-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .close-secret:hover {
+            background: var(--hairline);
+            text-decoration: none;
+        }
+
+        /* Clickable witch hat area */
+        .hat-trigger,
+        #witch-hat,
+        .header-illustration {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .hat-trigger {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header>
         <!-- Header floral illustration with witch hat and flowers -->
-        <svg class="header-illustration" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="header-illustration" viewBox="0 -10 200 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <!-- Left peony/rose cluster -->
             <g fill="none">
                 <!-- Rose 1 -->
@@ -785,8 +999,10 @@
                 <ellipse cx="6" cy="14" rx="1.5" ry="2.5" stroke="#9B8BB8" stroke-width="1.5"/>
             </g>
             
-            <!-- Center witch hat -->
-            <g stroke="#8B6080" stroke-width="2" fill="none">
+            <!-- Center witch hat (clickable for secret page) -->
+            <g id="witch-hat" class="hat-trigger" stroke="#8B6080" stroke-width="2" fill="none">
+                <!-- Invisible larger hit area -->
+                <rect x="70" y="5" width="60" height="55" fill="transparent" stroke="none"/>
                 <path d="M100 13l-20 38h40l-20-38z"/>
                 <ellipse cx="100" cy="51" rx="27" ry="7"/>
                 <path d="M94 30c4-2 8-2 12 0" stroke-width="1.5"/>
@@ -870,8 +1086,7 @@
                         <ellipse cx="24" cy="46" rx="2.5" ry="4" stroke="#D8C4E8" stroke-width="1.5"/>
                         <ellipse cx="24" cy="39" rx="2" ry="3" stroke="#D8C4E8" stroke-width="1.5"/>
                     </g>
-                    <circle cx="14" cy="28" r="1.5" fill="#D8C4E8"/>
-                    <circle cx="34" cy="18" r="2" fill="#E8D4D4"/>
+                    <circle cx="12" cy="42" r="1.5" fill="#D8C4E8"/>
                 </svg>
                 
                 <svg class="sessions-floral-corner bottom-right" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -885,8 +1100,7 @@
                         <ellipse cx="24" cy="46" rx="2.5" ry="4" stroke="#D8C4E8" stroke-width="1.5"/>
                         <ellipse cx="24" cy="39" rx="2" ry="3" stroke="#D8C4E8" stroke-width="1.5"/>
                     </g>
-                    <circle cx="14" cy="28" r="1.5" fill="#D8C4E8"/>
-                    <circle cx="34" cy="18" r="2" fill="#E8D4D4"/>
+                    <circle cx="12" cy="42" r="1.5" fill="#D8C4E8"/>
                 </svg>
 
                 <h3>Chinh's Birthday Highlights</h3>
@@ -1583,6 +1797,150 @@
                 <li><strong>Hydration:</strong> Sedona is ~4,300 ft elevation. Drink plenty of water and electrolytes.</li>
             </ul>
         </section>
+
+        <!-- Hidden birthday planning page (not in nav) -->
+        <section id="for-craig-and-deenah">
+            <div class="secret-header">
+                <h2>Birthday Planning</h2>
+                <p class="secret-subtitle">shh, just Craig &amp; Deenah</p>
+            </div>
+
+            <div class="secret-intro">
+                Chinh's birthday dinner is <strong>Sat Oct 24, 7:00 PM</strong> at Costa by Madrid (reservation under Deenah).<br>
+                Outside dessert/flower policy unknown — call Costa <a href="tel:+19282828911">(928) 282-8911</a>.
+            </div>
+
+            <div class="planning-card">
+                <h3>Flowers for dinner</h3>
+                <div class="planning-callout">Best florists close at noon Saturday, so order Friday.</div>
+                <ul>
+                    <li>Pick florist</li>
+                    <li>Order</li>
+                    <li>Pickup/delivery before 6:30 PM Saturday</li>
+                    <li>Who's picking up</li>
+                    <li>Ask Costa about flowers at the table</li>
+                </ul>
+                <div class="placeholder-list-title">Florist options</div>
+                <div class="vendor-option">
+                    <div class="vendor-name"><a href="https://www.sedonamountainhighflowers.com/" target="_blank" rel="noopener">Mountain High Flowers</a></div>
+                    <div class="vendor-meta">
+                        <a href="tel:+19282034211">(928) 203-4211</a> · <a href="https://www.google.com/maps/search/?api=1&query=3000+W+State+Rte+89A+%23100,+Sedona,+AZ">3000 W State Rte 89A #100, Sedona</a><br>
+                        Sat 9 AM–12 PM
+                    </div>
+                    <div class="vendor-note">Best pick; same-day delivery listed, delivers to resorts.</div>
+                </div>
+                <div class="vendor-option">
+                    <div class="vendor-name"><a href="https://jazzbouquetfloral.com/" target="_blank" rel="noopener">Jazz Bouquet Floral</a></div>
+                    <div class="vendor-meta">
+                        <a href="tel:+19282041091">(928) 204-1091</a> · <a href="https://www.google.com/maps/search/?api=1&query=1725+W+State+Rte+89A+Ste+C,+Sedona,+AZ">1725 W State Rte 89A Ste C, Sedona</a><br>
+                        Sat hours unclear (may be closed)
+                    </div>
+                    <div class="vendor-note">Order Friday.</div>
+                </div>
+                <div class="vendor-option">
+                    <div class="vendor-name"><a href="https://local.safeway.com/safeway/az/sedona/2300-w-hwy-89a/floral.html" target="_blank" rel="noopener">Safeway Floral</a></div>
+                    <div class="vendor-meta">
+                        <a href="tel:+19282820118">(928) 282-0118</a> · <a href="https://www.google.com/maps/search/?api=1&query=2300+W+Hwy+89A,+Sedona,+AZ">2300 W Hwy 89A, Sedona</a><br>
+                        Sat 8 AM–6 PM
+                    </div>
+                    <div class="vendor-note">Last-minute fallback.</div>
+                </div>
+                <div class="vendor-option">
+                    <div class="vendor-name"><a href="https://theflirtyflower.com/" target="_blank" rel="noopener">The Flirty Flower</a></div>
+                    <div class="vendor-meta">
+                        <a href="tel:+19286499366">928-649-9366</a> · <a href="https://www.google.com/maps/search/?api=1&query=1100+Hwy+260+Ste+D1-B,+Cottonwood,+AZ">1100 Hwy 260 Ste D1-B, Cottonwood</a><br>
+                        Sat 9 AM–12 PM
+                    </div>
+                    <div class="vendor-note">Delivers to Sedona.</div>
+                </div>
+            </div>
+
+            <div class="planning-card">
+                <h3>Cupcakes / mini cakes</h3>
+                <p class="planning-lead">They're not big on sweets — keep portions small. Ask Costa about bringing outside dessert / cake fee.</p>
+                <ul>
+                    <li>Pick bakery</li>
+                    <li>Ask Costa about bringing dessert / cake fee</li>
+                    <li>Candle</li>
+                    <li>Who's picking up</li>
+                </ul>
+                <div class="placeholder-list-title">Bakery options</div>
+                <div class="vendor-option">
+                    <div class="vendor-name"><a href="https://sweettreatsnowheats.com/" target="_blank" rel="noopener">Karen's Gluten Free Bakeshop / Sweet Treats No Wheats</a></div>
+                    <div class="vendor-meta">
+                        <a href="tel:+19286319313">(928) 631-9313</a> · <a href="https://www.google.com/maps/search/?api=1&query=2081+W+State+Rte+89A+Suite+6,+Sedona,+AZ">2081 W State Rte 89A Suite 6, Sedona</a><br>
+                        Sat 9 AM–5 PM, go early (sells out)
+                    </div>
+                    <div class="vendor-note">Best pick. Gluten-free, dairy-free, no processed sugar; cupcake jars in 2–6 packs.</div>
+                </div>
+                <div class="vendor-option">
+                    <div class="vendor-name"><a href="https://sedonacakes.com/" target="_blank" rel="noopener">Cream and Cake Couture</a></div>
+                    <div class="vendor-meta">
+                        <a href="tel:+19284269232">928-426-9232</a> · <a href="https://www.google.com/maps/search/?api=1&query=313+AZ-179+Unit+A-11,+Sedona,+AZ">313 AZ-179 Unit A-11, Sedona</a><br>
+                        Sat 10 AM–6 PM
+                    </div>
+                    <div class="vendor-note">Walk-in only; closest to Costa.</div>
+                </div>
+                <div class="vendor-option">
+                    <div class="vendor-name"><a href="https://local.safeway.com/safeway/az/sedona/2300-w-hwy-89a/bakery.html" target="_blank" rel="noopener">Safeway Bakery</a></div>
+                    <div class="vendor-meta">
+                        <a href="tel:+19282820118">(928) 282-0118</a> · <a href="https://www.google.com/maps/search/?api=1&query=2300+W+Hwy+89A,+Sedona,+AZ">2300 W Hwy 89A, Sedona</a><br>
+                        Sat 7 AM–7 PM
+                    </div>
+                    <div class="vendor-note">Shelf cupcakes; one stop with flowers.</div>
+                </div>
+                <div class="vendor-option">
+                    <div class="vendor-name"><a href="https://www.laylasbakerycafe.com/" target="_blank" rel="noopener">Layla's Bakery-Café</a></div>
+                    <div class="vendor-meta">
+                        <a href="tel:+19282824798">928-282-4798</a> · <a href="https://www.google.com/maps/search/?api=1&query=3190+W+Hwy+89A+Suite+200,+Sedona,+AZ">3190 W Hwy 89A Suite 200</a><br>
+                        Hours unconfirmed
+                    </div>
+                    <div class="vendor-note">Small European pastries.</div>
+                </div>
+            </div>
+
+            <div class="planning-card">
+                <h3>Other touches</h3>
+                <ul>
+                    <li>Card from Craig &amp; Marin at Saturday breakfast — <a href="https://chinh2026card.vercel.app" target="_blank" rel="noopener">Chinh's birthday card</a></li>
+                    <li>Small gift</li>
+                    <li>Candle</li>
+                    <li>Photos</li>
+                </ul>
+            </div>
+
+            <div class="planning-card">
+                <h3>Who's doing what</h3>
+                <table class="task-table">
+                    <thead>
+                        <tr>
+                            <th>Craig</th>
+                            <th>Deenah</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <a class="close-secret" href="#sessions">Close</a>
+        </section>
     </main>
 
     <footer>
@@ -1635,31 +1993,32 @@
             const sections = document.querySelectorAll('main > section');
             const navLinks = document.querySelectorAll('nav a[data-tab]');
             const defaultTab = 'sessions';
+            const secretTab = 'for-craig-and-deenah';
 
             function showTab(tabId) {
-                // Hide all sections
+                const known = document.getElementById(tabId);
+                if (!known) {
+                    tabId = defaultTab;
+                }
+
                 sections.forEach(section => {
                     section.classList.remove('active');
                 });
 
-                // Remove active from all nav links
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                 });
 
-                // Show the selected section
                 const targetSection = document.getElementById(tabId);
                 if (targetSection) {
                     targetSection.classList.add('active');
                 }
 
-                // Highlight the active nav link
                 const activeLink = document.querySelector(`nav a[data-tab="${tabId}"]`);
                 if (activeLink) {
                     activeLink.classList.add('active');
                 }
 
-                // Scroll to top of main content
                 window.scrollTo({ top: 0, behavior: 'instant' });
             }
 
@@ -1668,7 +2027,6 @@
                 showTab(hash);
             }
 
-            // Handle nav clicks
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1677,11 +2035,27 @@
                 });
             });
 
-            // Listen for hash changes (back/forward buttons)
             window.addEventListener('hashchange', handleHashChange);
-
-            // Initialize on page load
             handleHashChange();
+
+            // Triple-tap the witch hat within ~2 seconds to open the secret page
+            const hat = document.getElementById('witch-hat');
+            const tapTimes = [];
+            function registerHatTap(e) {
+                e.preventDefault();
+                const now = Date.now();
+                tapTimes.push(now);
+                while (tapTimes.length && now - tapTimes[0] > 2000) {
+                    tapTimes.shift();
+                }
+                if (tapTimes.length >= 3) {
+                    tapTimes.length = 0;
+                    window.location.hash = secretTab;
+                }
+            }
+            if (hat) {
+                hat.addEventListener('pointerdown', registerHatTap);
+            }
         })();
     </script>
 </body>
