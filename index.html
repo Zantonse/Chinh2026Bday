@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
     <style>
         :root {
             /* Base backgrounds */
@@ -905,6 +906,140 @@
             color: var(--text-secondary);
         }
 
+        #map {
+            margin-top: 0;
+            padding-top: 1rem;
+        }
+
+        .trip-map {
+            height: 280px;
+            width: 100%;
+            border: 1px solid var(--hairline);
+            background: var(--blush-light);
+            margin: 0.75rem 0 1rem;
+            z-index: 1;
+        }
+
+        .map-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem 0.85rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .map-legend span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .map-swatch {
+            width: 0.65rem;
+            height: 0.65rem;
+            display: inline-block;
+        }
+
+        .map-swatch.stay { background: #8B6080; }
+        .map-swatch.birthday { background: #9B5C8F; }
+        .map-swatch.food { background: #7A3E62; }
+        .map-swatch.sights { background: #6B8B6B; }
+
+        .map-offmap {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .map-list-group {
+            margin-bottom: 1rem;
+        }
+
+        .map-list-group h3 {
+            font-size: 1.05rem;
+        }
+
+        .map-list-group ul {
+            list-style: none;
+        }
+
+        .map-list-group li {
+            padding: 0.55rem 0;
+            border-bottom: 1px solid var(--hairline-light);
+            font-size: 0.9rem;
+        }
+
+        .map-list-group li:last-child {
+            border-bottom: none;
+        }
+
+        .map-list-when {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin: 0.15rem 0 0.25rem;
+        }
+
+        .leaflet-popup-content-wrapper,
+        .leaflet-popup-tip {
+            background: var(--warm-white);
+            color: var(--text-body);
+            box-shadow: none;
+            border: 1px solid var(--hairline);
+        }
+
+        .leaflet-popup-content {
+            margin: 0.7rem 0.85rem;
+            font-size: 0.85rem;
+            line-height: 1.45;
+        }
+
+        .leaflet-popup-content strong {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-heading);
+        }
+
+        .weather-illustration {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 0 1.25rem;
+        }
+
+        .scorpio-line {
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-orchid);
+            margin-top: 0.45rem;
+        }
+
+        .scorpio-glyph {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            vertical-align: -0.15em;
+            margin-left: 0.35rem;
+        }
+
+        .sessions-box .scorpio-glyph {
+            display: block;
+            width: 22px;
+            height: 22px;
+            margin: 0 auto 0.5rem;
+        }
+
+        .footer-scorpion {
+            display: block;
+            margin: 0 auto 1rem;
+            width: 90px;
+            height: auto;
+        }
+
         /* Day pages - reset margin-top since they're standalone */
         #day1, #day2, #day3, #day4 {
             margin-top: 0;
@@ -1182,12 +1317,29 @@
                 <ellipse cx="194" cy="14" rx="1.5" ry="2.5" stroke="#9B8BB8" stroke-width="1.5"/>
             </g>
             
+            <!-- Scorpio constellation (Antares slightly larger) -->
+            <g class="scorpio-constellation" stroke="#8B6080" stroke-width="0.9" fill="#8B6080">
+                <circle cx="128" cy="2" r="1.3"/>
+                <circle cx="134" cy="6" r="1.3"/>
+                <circle cx="140" cy="8" r="2.1"/>
+                <circle cx="147" cy="11" r="1.3"/>
+                <circle cx="153" cy="16" r="1.2"/>
+                <circle cx="156" cy="23" r="1.2"/>
+                <circle cx="151" cy="28" r="1.1"/>
+                <circle cx="146" cy="26" r="1.1"/>
+                <line x1="128" y1="2" x2="134" y2="6"/>
+                <line x1="134" y1="6" x2="140" y2="8"/>
+                <line x1="140" y1="8" x2="147" y2="11"/>
+                <line x1="147" y1="11" x2="153" y2="16"/>
+                <line x1="153" y1="16" x2="156" y2="23"/>
+                <line x1="156" y1="23" x2="151" y2="28"/>
+                <line x1="151" y1="28" x2="146" y2="26"/>
+            </g>
+
             <!-- Small stars scattered -->
             <g fill="#9B8BB8">
                 <circle cx="55" cy="18" r="2"/>
-                <circle cx="145" cy="16" r="2"/>
                 <circle cx="70" cy="34" r="1.5"/>
-                <circle cx="130" cy="31" r="1.5"/>
             </g>
             
             <!-- Crescent moon -->
@@ -1203,6 +1355,7 @@
             <a href="https://www.google.com/maps/search/?api=1&query=100+Amara+Lane,+Sedona,+AZ+86336">Amara Resort & Spa, Sedona</a>
         </div>
         <p class="birthday-wish">Happy Birthday, Chinh</p>
+        <p class="scorpio-line">Scorpio sun · Oct 24</p>
     </header>
 
     <nav>
@@ -1219,6 +1372,7 @@
             <li><a href="#tips" data-tab="tips">Tips</a></li>
             <li><a href="#weather" data-tab="weather">Weather</a></li>
             <li><a href="#packing" data-tab="packing">Packing</a></li>
+            <li><a href="#map" data-tab="map">Map</a></li>
         </ul>
     </nav>
 
@@ -1257,6 +1411,9 @@
                     <circle cx="12" cy="42" r="1.5" fill="#D8C4E8"/>
                 </svg>
 
+                <svg class="scorpio-glyph" viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M4 6h3l3 5 3-5h3M10 11v5M8 16h4M14 16l2-3" fill="none" stroke="#E8D4D4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
                 <h3>Chinh's Birthday Highlights</h3>
                 <p class="sessions-subtitle">Spa, spiritual sessions, and birthday dinner</p>
 
@@ -1551,7 +1708,11 @@
         <section id="day2">
             <div class="day-card">
                 <div class="day-header birthday">
-                    <div class="day-label">Day 2 · Chinh's Birthday</div>
+                    <div class="day-label">Day 2 · Chinh's Birthday
+                        <svg class="scorpio-glyph" viewBox="0 0 20 20" aria-hidden="true">
+                            <path d="M4 6h3l3 5 3-5h3M10 11v5M8 16h4M14 16l2-3" fill="none" stroke="#FBF3EA" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <div class="day-date">Saturday, October 24</div>
                     <div class="day-theme">Tlaquepaque, Healing Sessions & Birthday Dinner</div>
                 </div>
@@ -2083,6 +2244,21 @@
             </div>
         </section>
 
+        <!-- Map -->
+        <section id="map">
+            <h2>Sedona Map</h2>
+            <p class="weather-source">Stay, meals, and walks around town. Tap a pin or use the list for directions.</p>
+            <div class="map-legend" aria-label="Map legend">
+                <span><i class="map-swatch stay"></i> Stay</span>
+                <span><i class="map-swatch birthday"></i> Birthday dinner</span>
+                <span><i class="map-swatch food"></i> Food</span>
+                <span><i class="map-swatch sights"></i> Hikes &amp; sights</span>
+            </div>
+            <div id="trip-map" class="trip-map" role="region" aria-label="Map of Sedona trip places"></div>
+            <p class="map-offmap">Phoenix Sky Harbor (PHX) is off this map — <a href="https://www.google.com/maps/search/?api=1&query=Phoenix+Sky+Harbor+International+Airport" target="_blank" rel="noopener">Directions to PHX</a>.</p>
+            <div id="map-list"></div>
+        </section>
+
         <!-- Hidden birthday planning page (not in nav) -->
         <section id="for-craig-and-deenah">
             <div class="secret-header">
@@ -2230,6 +2406,13 @@
 
     <footer>
         <!-- Cute witch on broomstick -->
+        <svg class="footer-scorpion" viewBox="0 0 90 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 22c4-8 10-12 16-10 4 1 6 5 8 9 2-6 6-10 11-9 5 1 8 7 8 12" stroke="#8B6080" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M8 16c2 1 4 4 4 6M16 14c2 2 3 5 2 8" stroke="#8B6080" stroke-width="1.3" stroke-linecap="round"/>
+            <circle cx="55" cy="24" r="2.2" stroke="#8B6080" stroke-width="1.3"/>
+            <path d="M57 24c8 1 14-4 16-10 1-3-1-6-4-5" stroke="#6B8B6B" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M69 9l3-4 3 3" stroke="#6B8B6B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <svg class="footer-witch" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <!-- Broomstick -->
             <path d="M15 35h55" stroke="#8B6080" stroke-width="3" stroke-linecap="round"/>
@@ -2273,6 +2456,7 @@
         <div class="footer-love">Made with love for Chinh's birthday.</div>
     </footer>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
         (function() {
             const sections = document.querySelectorAll('main > section');
@@ -2305,6 +2489,10 @@
                 }
 
                 window.scrollTo({ top: 0, behavior: 'instant' });
+
+                if (tabId === 'map') {
+                    ensureTripMap();
+                }
             }
 
             function handleHashChange() {
@@ -2341,6 +2529,111 @@
             if (hat) {
                 hat.addEventListener('pointerdown', registerHatTap);
             }
+
+            const tripPlaces = [
+                { name: 'Amara Resort & Spa', cat: 'stay', lat: 34.869603, lon: -111.758512, when: 'Stay · check-in Fri 4 PM', query: '100+Amara+Lane,+Sedona,+AZ+86336' },
+                { name: 'Costa by Madrid', cat: 'birthday', lat: 34.864071, lon: -111.763671, when: "Chinh's birthday dinner Sat 7 PM", query: '150+AZ-179,+Ste+9,+Sedona,+AZ' },
+                { name: 'Wildcraft Kitchen', cat: 'food', lat: 34.871490, lon: -111.761371, when: 'Sat breakfast', query: '345+Jordan+Rd,+Sedona,+AZ' },
+                { name: 'Elote Cafe', cat: 'food', lat: 34.871965, lon: -111.760891, when: 'Fri dinner · 350 Jordan Rd', query: 'Elote+Cafe,+350+Jordan+Road,+Sedona,+AZ' },
+                { name: 'The Secret Garden Cafe', cat: 'food', lat: 34.862749, lon: -111.763663, when: 'Sat lunch at Tlaquepaque', query: 'Secret+Garden+Cafe,+Tlaquepaque,+Sedona,+AZ' },
+                { name: 'ChocolaTree Organic Eatery', cat: 'food', lat: 34.862962, lon: -111.788431, when: 'Fri lunch', query: '1595+W+SR+89A,+Sedona,+AZ' },
+                { name: 'The Hudson', cat: 'food', lat: 34.858590, lon: -111.762659, when: 'Sun lunch 11:45', query: '671+AZ-179,+Ste+D,+Sedona,+AZ' },
+                { name: 'Vespa Healthy Italian Cafe', cat: 'food', lat: 34.863356, lon: -111.784167, when: 'Sun dinner · 1350 W SR 89A', query: '1350+W+SR+89A,+Ste+22,+Sedona,+AZ' },
+                { name: 'The Vault Uptown', cat: 'food', lat: 34.868289, lon: -111.761957, when: 'Backup dinner', query: '361+Forest+Rd,+Sedona,+AZ' },
+                { name: 'Hideaway House', cat: 'food', lat: 34.864534, lon: -111.763192, when: 'Backup lunch/dinner', query: '231+AZ-179,+Ste+B,+Sedona,+AZ' },
+                { name: 'Mariposa', cat: 'food', lat: 34.866342, lon: -111.774731, when: 'Backup sunset dinner', query: '700+W+AZ-89A,+Sedona,+AZ' },
+                { name: 'Long Canyon Trailhead', cat: 'sights', lat: 34.916309, lon: -111.822217, when: 'Birthing Cave access · end of Long Canyon Rd', query: 'Long+Canyon+Trailhead,+Sedona,+AZ' },
+                { name: 'Mescal Trailhead', cat: 'sights', lat: 34.901842, lon: -111.826748, when: 'Alternate trailhead for Birthing Cave', query: 'Mescal+Trailhead,+Sedona,+AZ' },
+                { name: 'Amitabha Stupa & Peace Park', cat: 'sights', lat: 34.875570, lon: -111.808276, when: 'Fri 2:30 PM', query: '2650+Pueblo+Dr,+Sedona,+AZ' },
+                { name: 'Tlaquepaque', cat: 'sights', lat: 34.861954, lon: -111.762909, when: 'Sat morning galleries', query: 'Tlaquepaque+Arts+Village,+Sedona,+AZ' },
+                { name: 'Oak Creek walk', cat: 'sights', lat: 34.869603, lon: -111.758512, when: 'Creekside trail at Amara', query: '100+Amara+Lane,+Sedona,+AZ+86336' },
+                { name: 'Palatki Heritage Site', cat: 'sights', lat: 34.915974, lon: -111.902215, when: 'Listed Sunday option · book ahead', query: 'Palatki+Heritage+Site,+Sedona,+AZ' },
+                { name: 'Crystal Magic', cat: 'sights', lat: 34.862436, lon: -111.812043, when: 'Fri 3:20 PM', query: '2978+AZ-89A,+Sedona,+AZ' },
+                { name: 'Center for the New Age', cat: 'sights', lat: 34.863082, lon: -111.762666, when: 'Sat metaphysical shop', query: '341+SR+179,+Sedona,+AZ' },
+                { name: 'Green Witch Creations', cat: 'sights', lat: 34.871076, lon: -111.760310, when: 'Uptown shop · steps from Amara', query: '247+N+State+Rte+89A,+Sedona,+AZ' }
+            ];
+
+            const catLabels = {
+                stay: 'Stay',
+                birthday: "Chinh's birthday dinner",
+                food: 'Food',
+                sights: 'Hikes & sights'
+            };
+
+            const pinColors = {
+                stay: '#8B6080',
+                birthday: '#9B5C8F',
+                food: '#7A3E62',
+                sights: '#6B8B6B'
+            };
+
+            function mapsUrl(query) {
+                return 'https://www.google.com/maps/search/?api=1&query=' + query;
+            }
+
+            function pinIcon(color) {
+                return L.divIcon({
+                    className: '',
+                    iconSize: [18, 18],
+                    iconAnchor: [9, 9],
+                    popupAnchor: [0, -10],
+                    html: '<span style="display:block;width:14px;height:14px;border-radius:50%;background:' + color + ';border:2px solid #FBF3EA;"></span>'
+                });
+            }
+
+            let tripMap = null;
+            function ensureTripMap() {
+                if (typeof L === 'undefined') return;
+                const el = document.getElementById('trip-map');
+                if (!el) return;
+                if (!tripMap) {
+                    tripMap = L.map(el, { scrollWheelZoom: false });
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                        maxZoom: 19
+                    }).addTo(tripMap);
+                    const group = [];
+                    tripPlaces.forEach((place) => {
+                        const marker = L.marker([place.lat, place.lon], { icon: pinIcon(pinColors[place.cat]) });
+                        marker.bindPopup(
+                            '<strong>' + place.name + '</strong><br>' +
+                            place.when + '<br>' +
+                            '<a href="' + mapsUrl(place.query) + '" target="_blank" rel="noopener">Directions</a>'
+                        );
+                        marker.addTo(tripMap);
+                        group.push(marker);
+                    });
+                    tripMap.fitBounds(L.featureGroup(group).getBounds().pad(0.18));
+                }
+                setTimeout(function() {
+                    tripMap.invalidateSize();
+                }, 80);
+            }
+
+            (function renderMapList() {
+                const host = document.getElementById('map-list');
+                if (!host) return;
+                const order = ['stay', 'birthday', 'food', 'sights'];
+                order.forEach((cat) => {
+                    const items = tripPlaces.filter((p) => p.cat === cat);
+                    if (!items.length) return;
+                    const wrap = document.createElement('div');
+                    wrap.className = 'map-list-group';
+                    const h3 = document.createElement('h3');
+                    h3.textContent = catLabels[cat];
+                    wrap.appendChild(h3);
+                    const ul = document.createElement('ul');
+                    items.forEach((place) => {
+                        const li = document.createElement('li');
+                        li.innerHTML = '<strong>' + place.name + '</strong>' +
+                            '<span class="map-list-when">' + place.when + '</span>' +
+                            '<a href="' + mapsUrl(place.query) + '" target="_blank" rel="noopener">Directions</a>';
+                        ul.appendChild(li);
+                    });
+                    wrap.appendChild(ul);
+                    host.appendChild(wrap);
+                });
+            })();
 
             const packingKey = 'chinh-packing-2026';
             const packingBoxes = document.querySelectorAll('#packing input[type="checkbox"]');
