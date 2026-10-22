@@ -753,6 +753,158 @@
             margin-top: 0;
         }
 
+        #weather {
+            background: var(--lavender-light);
+            margin-left: -1.25rem;
+            margin-right: -1.25rem;
+            padding: 1.5rem 1.25rem;
+            margin-top: 0;
+        }
+
+        #packing {
+            margin-top: 0;
+            padding-top: 1rem;
+        }
+
+        .weather-source {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin: -0.5rem 0 1.25rem;
+            line-height: 1.5;
+        }
+
+        .weather-card {
+            background: var(--warm-white);
+            border: 1px solid var(--hairline);
+            padding: 1.1rem 1.25rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .weather-card h3 {
+            margin-bottom: 0.45rem;
+        }
+
+        .weather-card p {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            line-height: 1.55;
+        }
+
+        .weather-table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .weather-table {
+            width: 100%;
+            min-width: 420px;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            background: var(--warm-white);
+            border: 1px solid var(--hairline);
+        }
+
+        .weather-table th {
+            background: var(--dusty-lavender);
+            color: var(--text-body);
+            font-weight: 600;
+            padding: 0.55rem 0.6rem;
+            text-align: left;
+            font-size: 0.75rem;
+        }
+
+        .weather-table td {
+            padding: 0.55rem 0.6rem;
+            border-top: 1px solid var(--hairline-light);
+            color: var(--text-body);
+            vertical-align: top;
+        }
+
+        .weather-table tr.birthday-row td {
+            background: var(--blush-light);
+        }
+
+        .day-weather {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+            padding: 0.65rem 1.25rem;
+            background: var(--lavender-light);
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .day-header.birthday + .day-weather {
+            background: #4A3548;
+            color: var(--cream-text);
+            border-bottom-color: #5A4558;
+        }
+
+        .day-weather a {
+            color: var(--accent-orchid);
+        }
+
+        .day-header.birthday + .day-weather a {
+            color: #E8C8D8;
+        }
+
+        .pack-group {
+            background: var(--warm-white);
+            border: 1px solid var(--hairline);
+            padding: 1.1rem 1.25rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .pack-group h3 {
+            margin-bottom: 0.65rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--hairline-light);
+        }
+
+        .pack-list {
+            list-style: none;
+        }
+
+        .pack-list li {
+            padding: 0.45rem 0;
+            border-bottom: 1px solid var(--hairline-light);
+            font-size: 0.9rem;
+            color: var(--text-body);
+        }
+
+        .pack-list label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .pack-list li:last-child {
+            border-bottom: none;
+        }
+
+        .pack-list input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 1.05rem;
+            height: 1.05rem;
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+            border: 1px solid var(--accent-orchid);
+            background: var(--cream);
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+
+        .pack-list input[type="checkbox"]:checked {
+            background: var(--accent-orchid);
+            box-shadow: inset 0 0 0 2px var(--cream);
+        }
+
+        .pack-list input[type="checkbox"]:checked + span {
+            color: var(--text-secondary);
+        }
+
         /* Day pages - reset margin-top since they're standalone */
         #day1, #day2, #day3, #day4 {
             margin-top: 0;
@@ -1065,6 +1217,8 @@
             <li><a href="#dining" data-tab="dining">Dining</a></li>
             <li><a href="#places" data-tab="places">Places</a></li>
             <li><a href="#tips" data-tab="tips">Tips</a></li>
+            <li><a href="#weather" data-tab="weather">Weather</a></li>
+            <li><a href="#packing" data-tab="packing">Packing</a></li>
         </ul>
     </nav>
 
@@ -1295,6 +1449,7 @@
                     <div class="day-date">Friday, October 23</div>
                     <div class="day-theme">Arrival, West Sedona Shops, Stupa & Elote</div>
                 </div>
+                <p class="day-weather">65° / 52°, dry. Sunrise 6:39 AM, sunset 5:43 PM. Muddy trails and a fuller Oak Creek after Thursday's storm.</p>
                 <div class="day-content">
                     <div class="schedule-item">
                         <div class="schedule-time">8:15 AM</div>
@@ -1400,6 +1555,7 @@
                     <div class="day-date">Saturday, October 24</div>
                     <div class="day-theme">Tlaquepaque, Healing Sessions & Birthday Dinner</div>
                 </div>
+                <p class="day-weather">64° / 47°. 40% showers after 11 AM — bring a rain shell; clears for 7 PM dinner. Sunrise 6:40 AM, sunset 5:42 PM.</p>
                 <div class="day-content">
                     <div class="schedule-item">
                         <div class="schedule-time">8:30 AM</div>
@@ -1481,6 +1637,7 @@
                     <div class="day-date">Sunday, October 25</div>
                     <div class="day-theme">Vortex Quest, Slow Afternoon & Italian Dinner</div>
                 </div>
+                <p class="day-weather">65° / 46°, dry. Sunrise 6:41 AM, sunset 5:41 PM. Cool morning, mid-60s by afternoon.</p>
                 <div class="day-content">
                     <div class="schedule-item">
                         <div class="schedule-time">9:00 AM</div>
@@ -1563,6 +1720,7 @@
                     <div class="day-date">Monday, October 26</div>
                     <div class="day-theme">Final Creek Morning & Return to PHX</div>
                 </div>
+                <p class="day-weather">69° / 47°, dry. Sunrise 6:41 AM, sunset 5:40 PM. Cool creek morning, warmer afternoon drive.</p>
                 <div class="day-content">
                     <div class="schedule-item">
                         <div class="schedule-time">8:30 AM</div>
@@ -1796,6 +1954,133 @@
                 <li><strong>Healer Reservations:</strong> Call Gateway Cottage 3–4 weeks ahead for Chinh's sessions.</li>
                 <li><strong>Hydration:</strong> Sedona is ~4,300 ft elevation. Drink plenty of water and electrolytes.</li>
             </ul>
+        </section>
+
+        <!-- Weather -->
+        <section id="weather">
+            <h2>Sedona Weather</h2>
+            <p class="weather-source">
+                National Weather Service forecast as of Oct 22.
+                <a href="https://forecast.weather.gov/MapClick.php?lat=34.8697&lon=-111.7610" target="_blank" rel="noopener">Forecast as of Oct 22, check again before leaving</a>.
+            </p>
+
+            <div class="weather-card">
+                <h3>Trip summary</h3>
+                <p>Cool, mostly dry fall weather, highs mid-60s, lows upper 40s. Mornings chilly (46–51°F around 7 AM). Sunset about 5:40 PM, so dinners are after dark (~53°F at 7 PM).</p>
+            </div>
+
+            <div class="weather-card">
+                <h3>Birthday Saturday</h3>
+                <p>Saturday afternoon 40% chance of showers/thunderstorms after 11 AM, overlapping her 3:00 session; clears for 7 PM Costa dinner. Bring a rain shell.</p>
+            </div>
+
+            <div class="weather-card">
+                <h3>Trails &amp; creek</h3>
+                <p>Storm Thursday Oct 22 (flash flood warning), so expect muddy trails and a fuller Oak Creek Friday. The Birthing Cave is shady, so it feels cooler.</p>
+            </div>
+
+            <div class="weather-table-wrap">
+                <table class="weather-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>High / Low</th>
+                            <th>Sky</th>
+                            <th>Sun</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fri 10/23</td>
+                            <td>65° / 52°</td>
+                            <td>Dry</td>
+                            <td>6:39 AM / 5:43 PM</td>
+                        </tr>
+                        <tr class="birthday-row">
+                            <td>Sat 10/24 · Chinh's birthday</td>
+                            <td>64° / 47°</td>
+                            <td>40% showers after 11 AM</td>
+                            <td>6:40 AM / 5:42 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sun 10/25</td>
+                            <td>65° / 46°</td>
+                            <td>Dry</td>
+                            <td>6:41 AM / 5:41 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Mon 10/26</td>
+                            <td>69° / 47°</td>
+                            <td>Dry</td>
+                            <td>6:41 AM / 5:40 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Packing -->
+        <section id="packing">
+            <h2>Chinh's Packing List</h2>
+
+            <div class="pack-group">
+                <h3>Travel day</h3>
+                <ul class="pack-list">
+                    <li><label><input type="checkbox" id="pack-travel-outfit"><span>Comfy travel outfit + zip-up</span></label></li>
+                    <li><label><input type="checkbox" id="pack-travel-shoes"><span>Walking shoes OK for gravel/mud</span></label></li>
+                    <li><label><input type="checkbox" id="pack-travel-bag"><span>Sunglasses + small crossbody</span></label></li>
+                </ul>
+            </div>
+
+            <div class="pack-group">
+                <h3>Birthing Cave hike</h3>
+                <ul class="pack-list">
+                    <li><label><input type="checkbox" id="pack-hike-shoes"><span>Trail shoes with grip</span></label></li>
+                    <li><label><input type="checkbox" id="pack-hike-layers"><span>Leggings, wicking tee, light fleece</span></label></li>
+                    <li><label><input type="checkbox" id="pack-hike-sun"><span>Cap, sunscreen, water, snack</span></label></li>
+                    <li><label><input type="checkbox" id="pack-hike-kit"><span>Tissues + hand sanitizer (no restrooms)</span></label></li>
+                </ul>
+            </div>
+
+            <div class="pack-group">
+                <h3>Reiki, Akashic reading, massage</h3>
+                <ul class="pack-list">
+                    <li><label><input type="checkbox" id="pack-session-layers"><span>Soft loose layers (no belt/underwire)</span></label></li>
+                    <li><label><input type="checkbox" id="pack-session-feet"><span>Cozy socks or slip-ons, claw clip</span></label></li>
+                    <li><label><input type="checkbox" id="pack-session-journal"><span>Small journal + pen</span></label></li>
+                    <li><label><input type="checkbox" id="pack-session-wrap"><span>Wrap or rain shell for Saturday afternoon</span></label></li>
+                </ul>
+            </div>
+
+            <div class="pack-group">
+                <h3>Saturday birthday dinner at Costa</h3>
+                <ul class="pack-list">
+                    <li><label><input type="checkbox" id="pack-dinner-outfit"><span>Birthday outfit + walkable shoes</span></label></li>
+                    <li><label><input type="checkbox" id="pack-dinner-jacket"><span>Light jacket or wrap</span></label></li>
+                    <li><label><input type="checkbox" id="pack-dinner-piece"><span>One special piece (earrings/necklace)</span></label></li>
+                    <li><label><input type="checkbox" id="pack-dinner-vespa"><span>Second nice-casual outfit for Sunday Vespa dinner</span></label></li>
+                </ul>
+            </div>
+
+            <div class="pack-group">
+                <h3>Pool, spa, workouts</h3>
+                <ul class="pack-list">
+                    <li><label><input type="checkbox" id="pack-pool"><span>Swimsuit, cover-up, sandals, warm layer</span></label></li>
+                    <li><label><input type="checkbox" id="pack-workout"><span>One workout set + grip socks</span></label></li>
+                </ul>
+            </div>
+
+            <div class="pack-group">
+                <h3>Essentials</h3>
+                <ul class="pack-list">
+                    <li><label><input type="checkbox" id="pack-ess-rain"><span>Packable rain shell/umbrella</span></label></li>
+                    <li><label><input type="checkbox" id="pack-ess-warm"><span>Light puffer or fleece</span></label></li>
+                    <li><label><input type="checkbox" id="pack-ess-spf"><span>SPF, SPF lip balm, moisturizer</span></label></li>
+                    <li><label><input type="checkbox" id="pack-ess-water"><span>Refillable water bottle + electrolytes</span></label></li>
+                    <li><label><input type="checkbox" id="pack-ess-tech"><span>ID, charger, portable battery</span></label></li>
+                    <li><label><input type="checkbox" id="pack-ess-pjs"><span>Cozy pajamas</span></label></li>
+                </ul>
+            </div>
         </section>
 
         <!-- Hidden birthday planning page (not in nav) -->
@@ -2055,6 +2340,26 @@
             }
             if (hat) {
                 hat.addEventListener('pointerdown', registerHatTap);
+            }
+
+            const packingKey = 'chinh-packing-2026';
+            const packingBoxes = document.querySelectorAll('#packing input[type="checkbox"]');
+            try {
+                const saved = JSON.parse(localStorage.getItem(packingKey) || '{}');
+                packingBoxes.forEach((box) => {
+                    box.checked = !!saved[box.id];
+                    box.addEventListener('change', () => {
+                        const next = {};
+                        packingBoxes.forEach((item) => {
+                            next[item.id] = item.checked;
+                        });
+                        localStorage.setItem(packingKey, JSON.stringify(next));
+                    });
+                });
+            } catch (err) {
+                packingBoxes.forEach((box) => {
+                    box.addEventListener('change', () => {});
+                });
             }
         })();
     </script>
