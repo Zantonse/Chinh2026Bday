@@ -143,9 +143,11 @@
         nav ul {
             display: flex;
             list-style: none;
-            padding: 0.7rem 1rem;
-            gap: 0.25rem;
-            min-width: max-content;
+            padding: 0.7rem 0.6rem;
+            gap: 0.15rem;
+            min-width: 0;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         nav a {
@@ -621,15 +623,45 @@
         }
 
         /* Tips */
+        .page-jump {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0 0 1.15rem;
+            line-height: 1.7;
+        }
+
+        .page-jump a {
+            font-weight: 500;
+        }
+
+        section[id],
+        .day-card {
+            scroll-margin-top: 4.25rem;
+        }
+
+        .tip-group {
+            background: var(--warm-white);
+            border: 1px solid var(--hairline);
+            padding: 1.1rem 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .tip-group h3 {
+            margin-bottom: 0.45rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--hairline-light);
+        }
+
         .tips-list {
             list-style: none;
         }
 
         .tips-list li {
-            padding: 0.7rem 0;
+            padding: 0.65rem 0;
             border-bottom: 1px solid var(--hairline-light);
             font-size: 0.9rem;
             color: var(--text-body);
+            line-height: 1.55;
         }
 
         .tips-list li:last-child {
@@ -745,6 +777,11 @@
 
         #tips {
             margin-top: 0;
+            padding-top: 1.5rem;
+        }
+
+        #map {
+            padding-top: 1.5rem;
         }
 
         #weather {
@@ -1484,8 +1521,19 @@
             .weather-card p,
             .venue-about,
             .note,
-            .backup-list {
+            .backup-list,
+            .tips-list {
                 max-width: 70ch;
+            }
+
+            .tips-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .tips-grid .tip-group {
+                margin-bottom: 0;
             }
 
             .trip-map {
@@ -1646,19 +1694,10 @@
 
     <nav>
         <ul>
-            <li><a href="#sessions" data-tab="sessions">Chinh's Sessions</a></li>
-            <li><a href="#flights" data-tab="flights">Flights</a></li>
-            <li><a href="#amara" data-tab="amara">Amara</a></li>
-            <li><a href="#day1" data-tab="day1">Fri</a></li>
-            <li><a href="#day2" data-tab="day2">Sat</a></li>
-            <li><a href="#day3" data-tab="day3">Sun</a></li>
-            <li><a href="#day4" data-tab="day4">Mon</a></li>
-            <li><a href="#dining" data-tab="dining">Dining</a></li>
-            <li><a href="#places" data-tab="places">Places</a></li>
-            <li><a href="#tips" data-tab="tips">Tips</a></li>
-            <li><a href="#weather" data-tab="weather">Weather</a></li>
-            <li><a href="#packing" data-tab="packing">Packing</a></li>
-            <li><a href="#map" data-tab="map">Map</a></li>
+            <li><a href="#trip" data-tab="trip">Trip</a></li>
+            <li><a href="#birthday" data-tab="birthday">Birthday</a></li>
+            <li><a href="#explore" data-tab="explore">Eat &amp; Explore</a></li>
+            <li><a href="#prep" data-tab="prep">Prep</a></li>
             <li><button type="button" class="today-btn" id="today-btn" hidden>Today</button></li>
         </ul>
     </nav>
@@ -1744,6 +1783,14 @@
         <!-- Flights -->
         <section id="flights">
             <h2>Southwest Flights</h2>
+            <p class="page-jump">
+                Flights ·
+                <a href="#amara">Amara</a> ·
+                <a href="#day1">Fri</a> ·
+                <a href="#day2">Sat</a> ·
+                <a href="#day3">Sun</a> ·
+                <a href="#day4">Mon</a>
+            </p>
 
             <div class="flights-grid">
             <div class="flight-col">
@@ -2237,6 +2284,11 @@
         <!-- Dining -->
         <section id="dining">
             <h2>Restaurant Plan</h2>
+            <p class="page-jump">
+                Dining ·
+                <a href="#places">Places</a> ·
+                <a href="#map">Map</a>
+            </p>
 
             <ul class="meal-list">
                 <li class="meal-item">
@@ -2415,20 +2467,14 @@
             </div>
         </section>
 
-        <!-- Tips -->
-        <section id="tips">
-            <h2>Travel Tips</h2>
-
-            <ul class="tips-list">
-                <li><strong>Toddler Setup:</strong> Contact Amara in advance for a crib / Pack 'n Play in the master bedroom.</li>
-                <li><strong>Healer Reservations:</strong> Call Gateway Cottage 3–4 weeks ahead for Chinh's sessions.</li>
-                <li><strong>Hydration:</strong> Sedona is ~4,300 ft elevation. Drink plenty of water and electrolytes.</li>
-            </ul>
-        </section>
-
         <!-- Weather -->
         <section id="weather">
             <h2>Sedona Weather</h2>
+            <p class="page-jump">
+                Weather ·
+                <a href="#packing">Packing</a> ·
+                <a href="#tips">Tips</a>
+            </p>
             <div class="weather-layout">
             <img class="weather-illustration" src="images/sedona-weekend.webp" alt="Illustrated Sedona weekend scene" width="1024" height="1024" loading="lazy">
             <div>
@@ -2560,6 +2606,72 @@
                     <li><label><input type="checkbox" id="pack-ess-water"><span>Refillable water bottle + electrolytes</span></label></li>
                     <li><label><input type="checkbox" id="pack-ess-tech"><span>ID, charger, portable battery</span></label></li>
                     <li><label><input type="checkbox" id="pack-ess-pjs"><span>Cozy pajamas</span></label></li>
+                </ul>
+            </div>
+            </div>
+        </section>
+
+        <section id="tips">
+            <h2>Travel Tips</h2>
+            <p class="weather-source">Checked against Forest Service, City of Sedona, NWS Flagstaff, and DarkSky listings as of Oct 22, 2026. Re-check passes, shuttle hours, and alerts before you leave Amara.</p>
+
+            <div class="tips-grid">
+            <div class="tip-group">
+                <h3>Stay, Marin &amp; the creek</h3>
+                <ul class="tips-list">
+                    <li><strong>Crib:</strong> Call Amara ahead for a crib / Pack 'n Play in the master bedroom of the family suite. <a href="tel:+19282824828">(928) 282-4828</a>.</li>
+                    <li><strong>Stroller vs carrier:</strong> The Amitabha Stupa paths and Amara's creekside walk are gravel and stroller-okay. Palatki has ~70 uneven steps and is not stroller-friendly. The last stretch into Birthing Cave is a steep, loose scramble — use a carrier or skip the alcove with Marin.</li>
+                    <li><strong>Naps and sunset:</strong> Sunset is about 5:40 PM this weekend, so the warm light and any creek-side photos are before then. Saturday's 3:00 session lines up with nap time; plan the walk back to Amara before it gets dark and cool.</li>
+                    <li><strong>Amara to Uptown:</strong> The resort lists a golf cart to Uptown. City meters on Main Street (N SR 89A) run 9 AM–6 PM daily and are free before 9 and after 6; Sedona also has free public lots a block off the strip.</li>
+                </ul>
+            </div>
+
+            <div class="tip-group">
+                <h3>Passes &amp; parking</h3>
+                <ul class="tips-list">
+                    <li><strong>Red Rock Pass:</strong> Needed if you leave the car at a Coconino National Forest fee site. Daily $5, weekly $15, annual $20; an America the Beautiful pass works at the same Forest Service lots. Buy at site kiosks, the Red Rock Visitor Center, local vendors, or <a href="https://www.recreation.gov" target="_blank" rel="noopener">Recreation.gov</a>. It does not cover state parks or concession sites such as Crescent Moon or West Fork.</li>
+                    <li><strong>This trip:</strong> Mescal Trailhead and Palatki are on the Forest Service fee list. Long Canyon Trailhead (Birthing Cave) is not listed as a fee site — still confirm at the lot. A pass is not a reserved parking space.</li>
+                    <li><strong>Popular lots fill early:</strong> The city runs trailhead shuttles because the small lots overflow. Cathedral Rock and Soldier Pass lots are closed to private cars whenever the shuttle is running (normally Thu–Sun). Soldier Pass is also gated 6 PM–8 AM every day.</li>
+                    <li><strong>Sedona Shuttle:</strong> Free trailhead buses, no reservation, Thu–Sun 7:00 AM–5:30 PM to Cathedral Rock, Little Horse, Soldier Pass, Dry Creek Vista, and Mescal. Park at the free park-and-rides (SR 179, Posse Grounds, West SR 89A). <a href="https://sedonashuttle.com/how-to-ride/" target="_blank" rel="noopener">How to ride</a>.</li>
+                </ul>
+            </div>
+
+            <div class="tip-group">
+                <h3>Birthing Cave</h3>
+                <ul class="tips-list">
+                    <li><strong>The walk:</strong> Start at Long Canyon Trailhead (Forest Trail 122). The official trail is wide and nearly level. The cave itself is on an unmarked social spur — a steep, loose climb that needs hands for balance. Expect roughly 2–2.5 miles round trip if you go to the alcove; there are no restrooms.</li>
+                    <li><strong>After Thursday's storm:</strong> Expect muddy, slick rock and a fuller Oak Creek. Wear shoes with grip. If Saturday's showers return, skip the scramble — wet sandstone is the hard part.</li>
+                    <li><strong>Backup:</strong> Mescal Trailhead is the listed alternate (Red Rock Pass, shuttle Route 11). Cell coverage drops once you leave town; download a map and do not count on a signal.</li>
+                </ul>
+            </div>
+
+            <div class="tip-group">
+                <h3>Weather, washes &amp; dark skies</h3>
+                <ul class="tips-list">
+                    <li><strong>This weekend:</strong> Highs mid-60s, mornings in the upper 40s. NWS has Saturday at 40% showers after 11 AM, clearing for the 7 PM Costa dinner. Thursday's flash-flood warning noted a nearly 6-foot rise on Oak Creek — trails and dirt roads can stay muddy.</li>
+                    <li><strong>Washes:</strong> Stay out of creeks, slots, and low-water crossings if storms rebuild. Flooding can arrive from upstream while the sky over you looks fine. West Fork of Oak Creek is closed through Oct 31, 2026 after the Pocket Fire (rockfall and flood debris).</li>
+                    <li><strong>Altitude and dry air:</strong> Sedona sits about 4,350 feet at City Hall. Drink more water than you think, and pack lip balm and lotion. Visit Sedona notes October evenings cool quickly after sunset — bring the jacket to dinner.</li>
+                    <li><strong>Stargazing:</strong> Sedona is an International Dark Sky Community (designated 2014). If Saturday clears after dinner, the sky is worth a few minutes outside Amara — no need to drive.</li>
+                </ul>
+            </div>
+
+            <div class="tip-group">
+                <h3>Sessions &amp; Saturday dinner</h3>
+                <ul class="tips-list">
+                    <li><strong>Gateway Cottage:</strong> Confirm Chinh's Saturday and Sunday session times. <a href="tel:+19288624400">(928) 862-4400</a>. Soft, belt-free layers; sip water before and after — dry air plus table time adds up.</li>
+                    <li><strong>Saturday storm vs spa:</strong> The 3:00–5:30 work overlaps the afternoon shower risk. Pack the rain shell for the walk to Gateway Cottage and the ride to Costa.</li>
+                    <li><strong>Costa at 7 PM:</strong> Reservation under Deenah. Sunset is already over, so patio light is gone and it will be jacket weather (~50s). <a href="tel:+19282828911">(928) 282-8911</a> — ask about a candle on dessert when you confirm.</li>
+                    <li><strong>Photos:</strong> Golden hour is the hour before the 5:40 PM sunset. Tlaquepaque courtyards and the Amara creek are the easy frames; after dinner, use the dark-sky streets, not flash on the rocks.</li>
+                </ul>
+            </div>
+
+            <div class="tip-group">
+                <h3>Getting around</h3>
+                <ul class="tips-list">
+                    <li><strong>89A / Uptown:</strong> Amara is on the Uptown edge, so walk or take the resort cart when you can. Midday circling on 89A is the usual crunch; early morning and after 6 PM are quieter.</li>
+                    <li><strong>After dark:</strong> Trailhead shuttles stop at 5:30 PM. Sedona Shuttle Connect (on-demand, TransLoc app or <a href="tel:+19282035152">(928) 203-5152</a>) is listed Thu–Sun, 6:30 AM–8:30 PM, $2. You have the rental car for Costa; don't plan on a city ride after 8:30.</li>
+                    <li><strong>Palatki:</strong> Book ahead, bring photo ID, leave extra time on the gravel road, and download the reservation — cell is limited. Red Rock Pass required on site.</li>
+                    <li><strong>Forest signal:</strong> Coconino National Forest tells visitors they may have no cell service once they leave managed sites, and help can be hours away. Tell someone the trail and return time.</li>
                 </ul>
             </div>
             </div>
@@ -2697,7 +2809,7 @@
                 </table>
             </div>
 
-            <a class="close-secret" href="#sessions">Close</a>
+            <a class="close-secret" href="#trip">Close</a>
         </section>
     </main>
 
@@ -2758,42 +2870,54 @@
         (function() {
             const sections = document.querySelectorAll('main > section');
             const navLinks = document.querySelectorAll('nav a[data-tab]');
-            const defaultTab = 'sessions';
+            const defaultPage = 'trip';
             const secretTab = 'for-craig-and-deenah';
+            const pages = {
+                trip: ['flights', 'amara', 'day1', 'day2', 'day3', 'day4'],
+                birthday: ['sessions'],
+                explore: ['dining', 'places', 'map'],
+                prep: ['weather', 'packing', 'tips'],
+                'for-craig-and-deenah': ['for-craig-and-deenah']
+            };
+            const hashToPage = {
+                trip: 'trip', flights: 'trip', amara: 'trip',
+                day1: 'trip', day2: 'trip', day3: 'trip', day4: 'trip',
+                birthday: 'birthday', sessions: 'birthday',
+                explore: 'explore', dining: 'explore', places: 'explore', map: 'explore',
+                prep: 'prep', weather: 'prep', packing: 'prep', tips: 'prep',
+                'for-craig-and-deenah': 'for-craig-and-deenah'
+            };
 
-            function showTab(tabId) {
-                const known = document.getElementById(tabId);
-                if (!known) {
-                    tabId = defaultTab;
-                }
+            function showTab(hash) {
+                const pageId = hashToPage[hash] || defaultPage;
+                const ids = pages[pageId] || pages[defaultPage];
 
-                sections.forEach(section => {
-                    section.classList.remove('active');
+                sections.forEach((section) => {
+                    section.classList.toggle('active', ids.includes(section.id));
                 });
 
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
+                navLinks.forEach((link) => {
+                    link.classList.toggle('active', link.getAttribute('data-tab') === pageId);
                 });
 
-                const targetSection = document.getElementById(tabId);
-                if (targetSection) {
-                    targetSection.classList.add('active');
-                }
-
-                const activeLink = document.querySelector(`nav a[data-tab="${tabId}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-
-                window.scrollTo({ top: 0, behavior: 'instant' });
-
-                if (tabId === 'map') {
+                if (ids.includes('map')) {
                     ensureTripMap();
                 }
+
+                function scrollToTarget() {
+                    const scrollTarget = hash && hash !== pageId ? document.getElementById(hash) : null;
+                    if (scrollTarget) {
+                        scrollTarget.scrollIntoView({ behavior: 'instant', block: 'start' });
+                    } else {
+                        window.scrollTo({ top: 0, behavior: 'instant' });
+                    }
+                }
+                scrollToTarget();
+                requestAnimationFrame(scrollToTarget);
             }
 
             function handleHashChange() {
-                const hash = window.location.hash.slice(1) || defaultTab;
+                const hash = window.location.hash.slice(1) || defaultPage;
                 showTab(hash);
             }
 
@@ -2806,7 +2930,6 @@
             });
 
             window.addEventListener('hashchange', handleHashChange);
-            handleHashChange();
 
             // Triple-tap the witch hat within ~2 seconds to open the secret page
             const hat = document.getElementById('witch-hat');
@@ -3174,6 +3297,8 @@
                     btn.textContent = allOpen ? 'Expand all' : 'Collapse all';
                 });
             });
+
+            handleHashChange();
         })();
     </script>
 </body>
