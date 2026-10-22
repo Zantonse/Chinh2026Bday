@@ -568,6 +568,77 @@
             flex-shrink: 0;
         }
 
+        /* Chinh's Sessions Section */
+        .sessions-section {
+            background: linear-gradient(135deg, var(--desert-gold) 0%, #C9973D 100%);
+            border-radius: 16px;
+            padding: 1.5rem 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .sessions-header {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sessions-header h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--deep-earth);
+            margin-bottom: 0.25rem;
+        }
+
+        .sessions-header p {
+            font-size: 0.85rem;
+            color: var(--canyon-shadow);
+        }
+
+        .session-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .session-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .session-day-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--red-rock);
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+
+        .session-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--deep-earth);
+            margin-bottom: 0.25rem;
+        }
+
+        .session-time {
+            font-size: 0.9rem;
+            color: var(--canyon-shadow);
+            margin-bottom: 0.5rem;
+        }
+
+        .session-location {
+            font-size: 0.85rem;
+            color: var(--canyon-shadow);
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--desert-sand);
+        }
+
+        .session-location a {
+            color: var(--red-rock);
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -641,6 +712,7 @@
     <!-- Navigation -->
     <nav>
         <ul>
+            <li><a href="#chinh-sessions">Chinh's Sessions</a></li>
             <li><a href="#flights">Flights</a></li>
             <li><a href="#amara">Amara</a></li>
             <li><a href="#day1">Fri</a></li>
@@ -653,6 +725,45 @@
     </nav>
 
     <main>
+        <!-- Chinh's Birthday Sessions -->
+        <section id="chinh-sessions">
+            <div class="section-header">
+                <div class="section-icon">💆</div>
+                <h2>Chinh's Birthday Sessions</h2>
+            </div>
+
+            <div class="sessions-section">
+                <div class="sessions-header">
+                    <h3>🎂 Healing & Wellness for the Birthday Girl</h3>
+                    <p>Chinh's spa, massage, and energy work sessions</p>
+                </div>
+
+                <!-- Saturday Sessions -->
+                <div class="session-card">
+                    <div class="session-day-label">Saturday, Oct 24 · Birthday Day 🎂</div>
+                    <div class="session-title">Session 1 & 2: Akashic Records & Reiki</div>
+                    <div class="session-time">3:00 PM - 5:30 PM</div>
+                    <div class="session-location">
+                        📍 <a href="https://www.google.com/maps/search/?api=1&query=470+N+SR+89A,+Sedona,+AZ">Gateway Cottage Wellness Center</a><br>
+                        470 N SR 89A, Uptown Sedona · <a href="tel:+19288624400">(928) 862-4400</a><br>
+                        <span class="tbd">Confirmation: [Add]</span>
+                    </div>
+                </div>
+
+                <!-- Sunday Session -->
+                <div class="session-card">
+                    <div class="session-day-label">Sunday, Oct 25</div>
+                    <div class="session-title">Last Session: Craniosacral Massage</div>
+                    <div class="session-time">3:00 PM - 4:15 PM</div>
+                    <div class="session-location">
+                        📍 <a href="https://www.google.com/maps/search/?api=1&query=470+N+SR+89A,+Sedona,+AZ">Gateway Cottage Wellness Center</a><br>
+                        470 N SR 89A, Uptown Sedona · <a href="tel:+19288624400">(928) 862-4400</a><br>
+                        <span class="tbd">Confirmation: [Add]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Southwest Flights -->
         <section id="flights">
             <div class="section-header">
