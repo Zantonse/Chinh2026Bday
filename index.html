@@ -343,6 +343,24 @@
             font-style: italic;
         }
 
+        .day-header.birthday {
+            background: linear-gradient(135deg, var(--desert-gold) 0%, #C9973D 50%, var(--red-rock) 100%);
+        }
+
+        .birthday-day-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.25);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.7rem;
+            border-radius: 50px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
         .timeline-item {
             display: flex;
             gap: 1rem;
@@ -626,7 +644,7 @@
             <li><a href="#flights">Flights</a></li>
             <li><a href="#amara">Amara</a></li>
             <li><a href="#day1">Fri</a></li>
-            <li><a href="#day2">Sat</a></li>
+            <li><a href="#day2">Sat 🎂</a></li>
             <li><a href="#day3">Sun</a></li>
             <li><a href="#day4">Mon</a></li>
             <li><a href="#restaurants">Dining</a></li>
@@ -839,8 +857,8 @@
             </div>
 
             <div class="card">
-                <div class="day-header">
-                    <div class="day-number">Day 2</div>
+                <div class="day-header birthday">
+                    <div class="day-number">Day 2 <span class="birthday-day-badge">🎂 Birthday Day</span></div>
                     <div class="day-date">Saturday, October 24</div>
                     <div class="day-theme">Uptown & Tlaquepaque: Healing, Views & a Reading</div>
                 </div>
@@ -892,7 +910,7 @@
                 <div class="timeline-item">
                     <div class="timeline-time">7:00 PM</div>
                     <div class="timeline-content">
-                        <div class="timeline-title">Dinner at Costa by Madrid</div>
+                        <div class="timeline-title">🎂 Birthday Dinner at Costa by Madrid</div>
                         <div class="timeline-desc">Elevated Latin tapas and cocktails. Happy hour 4-6 PM.</div>
                         <div class="timeline-note">
                             📍 <a href="https://www.google.com/maps/search/?api=1&query=150+AZ-179,+Ste+9,+Sedona,+AZ">150 AZ-179, Ste 9</a> · <a href="tel:+19282828911">(928) 282-8911</a><br>
@@ -914,7 +932,7 @@
                 <div class="day-header">
                     <div class="day-number">Day 3</div>
                     <div class="day-date">Sunday, October 25</div>
-                    <div class="day-theme">Palatki Cliff Dwellings, Slow Afternoon & Celebration Dinner</div>
+                    <div class="day-theme">Vortex Quest, Slow Afternoon & Italian Dinner</div>
                 </div>
 
                 <div class="timeline-item">
@@ -972,7 +990,7 @@
                 <div class="timeline-item">
                     <div class="timeline-time">7:00 PM</div>
                     <div class="timeline-content">
-                        <div class="timeline-title">🎂 Celebration Dinner at Vespa Healthy Italian Cafe</div>
+                        <div class="timeline-title">Dinner at Vespa Healthy Italian Cafe</div>
                         <div class="timeline-desc">Sicilian-owned, rated 4.8 on Google. Known for pizza, lasagna, and fresh pasta. Casual and easy with a toddler.</div>
                         <div class="timeline-note">
                             📍 <a href="https://www.google.com/maps/search/?api=1&query=1350+W+SR+89A,+Ste+22,+Sedona,+AZ">1350 W SR 89A, Ste 22, West Sedona</a> · <a href="tel:+19288622228">(928) 862-2228</a><br>
@@ -1079,11 +1097,11 @@
                 </div>
 
                 <div class="meal-item">
-                    <div class="meal-when">Saturday Dinner</div>
+                    <div class="meal-when">Saturday Dinner 🎂</div>
                     <div class="meal-name">Costa by Madrid</div>
                     <div class="meal-details">
                         <a href="https://www.google.com/maps/search/?api=1&query=150+AZ-179,+Ste+9,+Sedona,+AZ">150 AZ-179, Ste 9</a> · Wed-Sun 4-9 PM · <a href="tel:+19282828911">(928) 282-8911</a><br>
-                        Latin tapas · Happy hour 4-6 PM
+                        Latin tapas · Happy hour 4-6 PM · Birthday dinner!
                     </div>
                     <div class="meal-reserve">Reservation under Deenah 7 PM</div>
                 </div>
@@ -1108,7 +1126,7 @@
                 </div>
 
                 <div class="meal-item">
-                    <div class="meal-when">Sunday Dinner 🎂</div>
+                    <div class="meal-when">Sunday Dinner</div>
                     <div class="meal-name">Vespa Healthy Italian Cafe</div>
                     <div class="meal-details">
                         <a href="https://www.google.com/maps/search/?api=1&query=1350+W+SR+89A,+Ste+22,+Sedona,+AZ">1350 W SR 89A, Ste 22, West Sedona</a> · Sun 11 AM-9 PM · <a href="tel:+19288622228">(928) 862-2228</a><br>
