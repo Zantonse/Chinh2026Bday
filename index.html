@@ -6,19 +6,20 @@
     <title>Sedona Retreat | Chinh's Birthday 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --red-rock: #C45C3E;
-            --red-rock-dark: #A24830;
-            --desert-sand: #E8D5C4;
-            --sage: #8B9A7D;
-            --sage-light: #B5C4A8;
-            --warm-cream: #FDF8F3;
-            --desert-gold: #D4A855;
-            --deep-earth: #3D2E2A;
-            --soft-terracotta: #D98B6B;
-            --canyon-shadow: #5C4742;
+            --blush: #E8D4D4;
+            --blush-light: #F5EEEE;
+            --lavender: #D8D4E8;
+            --lavender-light: #EEEDF5;
+            --mauve: #9B7B8E;
+            --mauve-dark: #6B4D5E;
+            --plum: #4A3542;
+            --cream: #FDFBF9;
+            --warm-white: #FFFEFA;
+            --hairline: #E0D8DC;
+            --text-muted: #8B7B82;
         }
 
         * {
@@ -28,113 +29,62 @@
         }
 
         body {
-            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--warm-cream);
-            color: var(--deep-earth);
-            line-height: 1.6;
-            font-size: 16px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--cream);
+            color: var(--plum);
+            line-height: 1.65;
+            font-size: 15px;
+            font-weight: 400;
         }
 
-        /* Hero Header */
-        .hero {
-            background: linear-gradient(135deg, var(--red-rock) 0%, var(--red-rock-dark) 50%, var(--canyon-shadow) 100%);
-            color: white;
-            padding: 2rem 1.25rem 2.5rem;
+        /* Header */
+        header {
+            background: var(--warm-white);
+            padding: 2.5rem 1.5rem 2rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            border-bottom: 1px solid var(--hairline);
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .birthday-badge {
-            display: inline-block;
-            background: var(--desert-gold);
-            color: var(--deep-earth);
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            margin-bottom: 1rem;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-        }
-
-        .at-a-glance {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            text-align: left;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .glance-item {
-            background: rgba(255,255,255,0.12);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 0.85rem 1rem;
-        }
-
-        .glance-item.full {
-            grid-column: 1 / -1;
-        }
-
-        .glance-label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            opacity: 0.8;
-            margin-bottom: 0.2rem;
-        }
-
-        .glance-value {
+        header h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.75rem;
             font-weight: 500;
-            font-size: 0.9rem;
+            color: var(--plum);
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.01em;
         }
 
-        .glance-value a {
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px dotted rgba(255,255,255,0.5);
+        header .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-details {
+            font-size: 0.8rem;
+            color: var(--mauve-dark);
+            line-height: 1.8;
+        }
+
+        .header-details strong {
+            font-weight: 500;
+        }
+
+        .header-details a {
+            color: var(--mauve-dark);
+            text-decoration: underline;
+            text-decoration-color: var(--blush);
+            text-underline-offset: 2px;
         }
 
         /* Navigation */
         nav {
-            background: white;
+            background: var(--warm-white);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-bottom: 1px solid var(--hairline);
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -142,144 +92,185 @@
         nav ul {
             display: flex;
             list-style: none;
-            padding: 0.75rem 1rem;
-            gap: 0.5rem;
+            padding: 0.65rem 1rem;
+            gap: 0.25rem;
             min-width: max-content;
         }
 
         nav a {
             display: block;
-            padding: 0.5rem 0.9rem;
+            padding: 0.4rem 0.75rem;
             text-decoration: none;
-            color: var(--canyon-shadow);
-            font-size: 0.8rem;
-            font-weight: 500;
-            border-radius: 20px;
+            color: var(--mauve-dark);
+            font-size: 0.75rem;
+            font-weight: 400;
             white-space: nowrap;
-            transition: all 0.2s ease;
+            border-bottom: 1px solid transparent;
         }
 
         nav a:hover, nav a:active {
-            background: var(--desert-sand);
-            color: var(--red-rock-dark);
+            border-bottom-color: var(--mauve);
         }
 
         /* Main Content */
         main {
-            max-width: 600px;
+            max-width: 540px;
             margin: 0 auto;
-            padding: 0 1rem 3rem;
+            padding: 0 1.25rem 3rem;
         }
 
         section {
-            margin-top: 2rem;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--desert-sand);
-        }
-
-        .section-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--red-rock);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            flex-shrink: 0;
+            margin-top: 2.5rem;
         }
 
         h2 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--red-rock-dark);
-        }
-
-        /* Cards */
-        .card {
-            background: white;
-            border-radius: 16px;
-            padding: 1.25rem;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--plum);
             margin-bottom: 1rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--hairline);
         }
 
-        .card-title {
-            font-family: 'Playfair Display', Georgia, serif;
+        h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
             font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--red-rock-dark);
+            font-weight: 500;
+            color: var(--mauve-dark);
             margin-bottom: 0.75rem;
         }
 
-        .card-row {
+        /* Chinh's Sessions - Featured Section */
+        .sessions-box {
+            background: var(--lavender-light);
+            border: 1px solid var(--lavender);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sessions-box h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--mauve-dark);
+            text-align: center;
+            margin-bottom: 0.25rem;
+        }
+
+        .sessions-box .sessions-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .session-item {
+            background: var(--warm-white);
+            border: 1px solid var(--hairline);
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .session-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .session-day {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--mauve);
+            margin-bottom: 0.35rem;
+        }
+
+        .session-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--plum);
+            margin-bottom: 0.2rem;
+        }
+
+        .session-time {
+            font-size: 0.85rem;
+            color: var(--mauve-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .session-location {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--hairline);
+            line-height: 1.6;
+        }
+
+        .session-location a {
+            color: var(--mauve-dark);
+        }
+
+        /* Info Card */
+        .info-card {
+            background: var(--warm-white);
+            border: 1px solid var(--hairline);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-row {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             padding: 0.5rem 0;
-            border-bottom: 1px solid var(--desert-sand);
-            font-size: 0.9rem;
+            border-bottom: 1px solid var(--hairline);
+            font-size: 0.85rem;
         }
 
-        .card-row:last-child {
+        .info-row:last-child {
             border-bottom: none;
             padding-bottom: 0;
         }
 
-        .card-row:first-child {
+        .info-row:first-child {
             padding-top: 0;
         }
 
-        .card-label {
-            color: var(--canyon-shadow);
-            font-weight: 500;
+        .info-label {
+            color: var(--text-muted);
             flex-shrink: 0;
             margin-right: 1rem;
         }
 
-        .card-value {
+        .info-value {
             text-align: right;
-            color: var(--deep-earth);
+            color: var(--plum);
+        }
+
+        .info-value a {
+            color: var(--mauve-dark);
         }
 
         .tbd {
-            color: var(--soft-terracotta);
+            color: var(--mauve);
             font-style: italic;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
-        /* Flight Cards */
-        .flight-card {
-            background: linear-gradient(135deg, var(--sage) 0%, var(--sage-light) 100%);
-            color: var(--deep-earth);
-        }
-
-        .flight-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Flight Info */
+        .flight-box {
+            background: var(--blush-light);
+            border: 1px solid var(--blush);
+            padding: 1rem 1.25rem;
             margin-bottom: 0.75rem;
         }
 
-        .flight-direction {
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        .flight-number {
-            background: rgba(255,255,255,0.4);
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
+        .flight-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--mauve);
+            margin-bottom: 0.5rem;
         }
 
         .flight-route {
@@ -287,7 +278,7 @@
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            margin: 1rem 0;
+            margin-bottom: 0.5rem;
         }
 
         .flight-city {
@@ -295,244 +286,253 @@
         }
 
         .flight-code {
+            font-family: 'Cormorant Garamond', Georgia, serif;
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: 500;
+            color: var(--plum);
         }
 
         .flight-time {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            color: var(--mauve-dark);
         }
 
         .flight-arrow {
-            font-size: 1.25rem;
-            opacity: 0.7;
+            color: var(--mauve);
+            font-size: 1rem;
         }
 
-        .flight-details {
+        .flight-meta {
             text-align: center;
-            font-size: 0.8rem;
-            opacity: 0.9;
+            font-size: 0.75rem;
+            color: var(--text-muted);
         }
 
-        /* Day Cards */
+        /* Day Schedule */
+        .day-card {
+            background: var(--warm-white);
+            border: 1px solid var(--hairline);
+            margin-bottom: 1rem;
+        }
+
         .day-header {
-            background: linear-gradient(135deg, var(--red-rock) 0%, var(--red-rock-dark) 100%);
-            color: white;
+            background: var(--blush-light);
+            border-bottom: 1px solid var(--hairline);
             padding: 1rem 1.25rem;
-            border-radius: 16px 16px 0 0;
-            margin: -1.25rem -1.25rem 1rem;
-        }
-
-        .day-number {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            opacity: 0.85;
-        }
-
-        .day-date {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 0.25rem 0;
-        }
-
-        .day-theme {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            font-style: italic;
         }
 
         .day-header.birthday {
-            background: linear-gradient(135deg, var(--desert-gold) 0%, #C9973D 50%, var(--red-rock) 100%);
+            background: var(--lavender-light);
+            border-bottom-color: var(--lavender);
         }
 
-        .birthday-day-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.25);
-            color: white;
+        .day-label {
             font-size: 0.65rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
             text-transform: uppercase;
-            padding: 0.3rem 0.7rem;
-            border-radius: 50px;
-            margin-left: 0.5rem;
-            vertical-align: middle;
+            letter-spacing: 0.1em;
+            color: var(--mauve);
+            margin-bottom: 0.25rem;
         }
 
-        .timeline-item {
+        .day-date {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--plum);
+        }
+
+        .day-theme {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.15rem;
+        }
+
+        .day-content {
+            padding: 1rem 1.25rem;
+        }
+
+        .schedule-item {
             display: flex;
             gap: 1rem;
-            padding: 0.85rem 0;
-            border-bottom: 1px solid var(--desert-sand);
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--hairline);
         }
 
-        .timeline-item:last-child {
+        .schedule-item:last-child {
             border-bottom: none;
             padding-bottom: 0;
         }
 
-        .timeline-time {
-            font-weight: 600;
+        .schedule-item:first-child {
+            padding-top: 0;
+        }
+
+        .schedule-time {
             font-size: 0.8rem;
-            color: var(--red-rock);
-            min-width: 70px;
+            color: var(--mauve);
+            min-width: 60px;
             flex-shrink: 0;
         }
 
-        .timeline-content {
+        .schedule-content {
             flex: 1;
         }
 
-        .timeline-title {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            font-size: 0.95rem;
+        .schedule-title {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--plum);
+            margin-bottom: 0.2rem;
         }
 
-        .timeline-desc {
-            font-size: 0.85rem;
-            color: var(--canyon-shadow);
+        .schedule-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
             line-height: 1.5;
         }
 
-        .timeline-note {
-            margin-top: 0.5rem;
-            padding: 0.5rem 0.75rem;
-            background: var(--desert-sand);
-            border-radius: 8px;
-            font-size: 0.8rem;
-            color: var(--canyon-shadow);
+        .schedule-note {
+            margin-top: 0.4rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            padding: 0.4rem 0.6rem;
+            background: var(--blush-light);
+            border-left: 2px solid var(--blush);
         }
 
-        /* Restaurant Table */
-        .meal-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+        .schedule-note a {
+            color: var(--mauve-dark);
+        }
+
+        /* Meals List */
+        .meal-list {
+            list-style: none;
         }
 
         .meal-item {
-            background: white;
-            border-radius: 12px;
-            padding: 1rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .meal-item:last-child {
+            border-bottom: none;
         }
 
         .meal-when {
             font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--red-rock);
-            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--mauve);
             margin-bottom: 0.25rem;
         }
 
         .meal-name {
-            font-weight: 600;
+            font-family: 'Cormorant Garamond', Georgia, serif;
             font-size: 1rem;
-            margin-bottom: 0.4rem;
+            font-weight: 500;
+            color: var(--plum);
+            margin-bottom: 0.25rem;
         }
 
         .meal-details {
-            font-size: 0.85rem;
-            color: var(--canyon-shadow);
-        }
-
-        .meal-reserve {
-            margin-top: 0.5rem;
             font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
-        /* Backup Restaurants */
-        .backup-section {
-            margin-top: 1.5rem;
+        .meal-details a {
+            color: var(--mauve-dark);
         }
 
+        /* Backup Section */
         .backup-title {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--canyon-shadow);
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px dashed var(--desert-sand);
-        }
-
-        .backup-item {
-            padding: 0.6rem 0;
-            border-bottom: 1px solid var(--desert-sand);
             font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 1px dashed var(--hairline);
         }
 
-        .backup-item:last-child {
-            border-bottom: none;
+        .backup-list {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.7;
         }
 
-        .backup-name {
-            font-weight: 600;
+        .backup-list a {
+            color: var(--mauve-dark);
         }
 
-        /* Tour/Shop Cards */
-        .venue-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-
-        .venue-badge {
-            background: var(--sage);
-            color: white;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 0.5rem 1rem;
-            font-weight: 600;
-        }
-
-        .venue-content {
-            padding: 1rem 1.25rem;
-        }
-
-        .venue-name {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--red-rock-dark);
+        .backup-list p {
             margin-bottom: 0.5rem;
         }
 
-        .venue-about {
-            font-size: 0.9rem;
-            color: var(--canyon-shadow);
+        /* Venue Cards */
+        .venue-item {
+            background: var(--warm-white);
+            border: 1px solid var(--hairline);
+            padding: 1rem 1.25rem;
             margin-bottom: 0.75rem;
+        }
+
+        .venue-day {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--mauve);
+            margin-bottom: 0.35rem;
+        }
+
+        .venue-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--plum);
+            margin-bottom: 0.35rem;
+        }
+
+        .venue-about {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.65rem;
             line-height: 1.5;
         }
 
         .venue-details {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .venue-details a {
+            color: var(--mauve-dark);
+        }
+
+        /* Tips */
+        .tips-list {
+            list-style: none;
+        }
+
+        .tips-list li {
+            padding: 0.65rem 0;
+            border-bottom: 1px solid var(--hairline);
             font-size: 0.85rem;
+            color: var(--plum);
         }
 
-        .venue-detail {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
+        .tips-list li:last-child {
+            border-bottom: none;
         }
 
-        .venue-detail-icon {
-            width: 20px;
-            text-align: center;
-            flex-shrink: 0;
+        .tips-list strong {
+            font-weight: 500;
         }
 
         /* Links */
         a {
-            color: var(--red-rock);
+            color: var(--mauve-dark);
             text-decoration: none;
         }
 
@@ -540,119 +540,25 @@
             text-decoration: underline;
         }
 
-        .phone-link, .address-link {
-            color: var(--red-rock);
-        }
-
-        /* Essentials Tips */
-        .tips-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .tips-list li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--desert-sand);
-            font-size: 0.9rem;
-            display: flex;
-            gap: 0.75rem;
-            align-items: flex-start;
-        }
-
-        .tips-list li:last-child {
-            border-bottom: none;
-        }
-
-        .tip-icon {
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        /* Chinh's Sessions Section */
-        .sessions-section {
-            background: linear-gradient(135deg, var(--desert-gold) 0%, #C9973D 100%);
-            border-radius: 16px;
-            padding: 1.5rem 1.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .sessions-header {
-            text-align: center;
-            margin-bottom: 1.25rem;
-        }
-
-        .sessions-header h3 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--deep-earth);
-            margin-bottom: 0.25rem;
-        }
-
-        .sessions-header p {
-            font-size: 0.85rem;
-            color: var(--canyon-shadow);
-        }
-
-        .session-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .session-card:last-child {
-            margin-bottom: 0;
-        }
-
-        .session-day-label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--red-rock);
-            font-weight: 600;
-            margin-bottom: 0.35rem;
-        }
-
-        .session-title {
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--deep-earth);
-            margin-bottom: 0.25rem;
-        }
-
-        .session-time {
-            font-size: 0.9rem;
-            color: var(--canyon-shadow);
-            margin-bottom: 0.5rem;
-        }
-
-        .session-location {
-            font-size: 0.85rem;
-            color: var(--canyon-shadow);
-            padding-top: 0.5rem;
-            border-top: 1px solid var(--desert-sand);
-        }
-
-        .session-location a {
-            color: var(--red-rock);
-        }
-
         /* Footer */
         footer {
             text-align: center;
             padding: 2rem 1rem;
-            background: var(--desert-sand);
-            color: var(--canyon-shadow);
-            font-size: 0.85rem;
+            border-top: 1px solid var(--hairline);
+            background: var(--blush-light);
         }
 
-        .footer-birthday {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.25rem;
-            color: var(--red-rock-dark);
-            margin-bottom: 0.5rem;
+        footer p {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--mauve-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        footer .footer-dates {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
 
         /* Smooth scroll */
@@ -660,103 +566,66 @@
             scroll-behavior: smooth;
         }
 
-        /* Utility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0,0,0,0);
-            border: 0;
-        }
-
-        @media (min-width: 480px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .at-a-glance {
-                gap: 1rem;
-            }
+        /* Subtle note styling */
+        .note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 1rem;
         }
     </style>
 </head>
 <body>
-    <!-- Hero Header -->
-    <header class="hero">
-        <div class="hero-content">
-            <div class="birthday-badge">✨ Happy Birthday Chinh ✨</div>
-            <h1>Sedona Spiritual Wellness<br>& Family Retreat</h1>
-            <p class="hero-subtitle">Craniosacral Healing, Cliff Dwellings, Crystal Shops & Creekside Sanctuary</p>
-            
-            <div class="at-a-glance">
-                <div class="glance-item">
-                    <div class="glance-label">Dates</div>
-                    <div class="glance-value">Oct 23-26, 2026</div>
-                </div>
-                <div class="glance-item">
-                    <div class="glance-label">Travelers</div>
-                    <div class="glance-value">Chinh, Craig, Marin + 1</div>
-                </div>
-                <div class="glance-item full">
-                    <div class="glance-label">Lodging</div>
-                    <div class="glance-value">
-                        <a href="https://www.google.com/maps/search/?api=1&query=100+Amara+Lane,+Sedona,+AZ+86336">Amara Resort & Spa, Sedona</a>
-                    </div>
-                </div>
-            </div>
+    <header>
+        <h1>Sedona Spiritual Wellness & Family Retreat</h1>
+        <p class="subtitle">A birthday trip for Chinh</p>
+        <div class="header-details">
+            <strong>Oct 23–26, 2026</strong><br>
+            Chinh, Craig, Marin & Companion<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=100+Amara+Lane,+Sedona,+AZ+86336">Amara Resort & Spa, Sedona</a>
         </div>
     </header>
 
-    <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="#chinh-sessions">Chinh's Sessions</a></li>
+            <li><a href="#sessions">Chinh's Sessions</a></li>
             <li><a href="#flights">Flights</a></li>
             <li><a href="#amara">Amara</a></li>
             <li><a href="#day1">Fri</a></li>
-            <li><a href="#day2">Sat 🎂</a></li>
+            <li><a href="#day2">Sat</a></li>
             <li><a href="#day3">Sun</a></li>
             <li><a href="#day4">Mon</a></li>
-            <li><a href="#restaurants">Dining</a></li>
-            <li><a href="#venues">Tours & Shops</a></li>
+            <li><a href="#dining">Dining</a></li>
+            <li><a href="#places">Places</a></li>
         </ul>
     </nav>
 
     <main>
         <!-- Chinh's Birthday Sessions -->
-        <section id="chinh-sessions">
-            <div class="section-header">
-                <div class="section-icon">💆</div>
-                <h2>Chinh's Birthday Sessions</h2>
-            </div>
+        <section id="sessions">
+            <h2>Chinh's Birthday Sessions</h2>
+            
+            <div class="sessions-box">
+                <h3>Healing & Wellness for the Birthday Girl</h3>
+                <p class="sessions-subtitle">Spa, massage, and energy work reserved for Chinh</p>
 
-            <div class="sessions-section">
-                <div class="sessions-header">
-                    <h3>🎂 Healing & Wellness for the Birthday Girl</h3>
-                    <p>Chinh's spa, massage, and energy work sessions</p>
-                </div>
-
-                <!-- Saturday Sessions -->
-                <div class="session-card">
-                    <div class="session-day-label">Saturday, Oct 24 · Birthday Day 🎂</div>
-                    <div class="session-title">Session 1 & 2: Akashic Records & Reiki</div>
-                    <div class="session-time">3:00 PM - 5:30 PM</div>
+                <div class="session-item">
+                    <div class="session-day">Saturday, Oct 24 — Birthday</div>
+                    <div class="session-name">Akashic Records & Reiki (Sessions 1 & 2)</div>
+                    <div class="session-time">3:00 – 5:30 PM</div>
                     <div class="session-location">
-                        📍 <a href="https://www.google.com/maps/search/?api=1&query=470+N+SR+89A,+Sedona,+AZ">Gateway Cottage Wellness Center</a><br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=470+N+SR+89A,+Sedona,+AZ">Gateway Cottage Wellness Center</a><br>
                         470 N SR 89A, Uptown Sedona · <a href="tel:+19288624400">(928) 862-4400</a><br>
                         <span class="tbd">Confirmation: [Add]</span>
                     </div>
                 </div>
 
-                <!-- Sunday Session -->
-                <div class="session-card">
-                    <div class="session-day-label">Sunday, Oct 25</div>
-                    <div class="session-title">Last Session: Craniosacral Massage</div>
-                    <div class="session-time">3:00 PM - 4:15 PM</div>
+                <div class="session-item">
+                    <div class="session-day">Sunday, Oct 25</div>
+                    <div class="session-name">Craniosacral Massage (Final Session)</div>
+                    <div class="session-time">3:00 – 4:15 PM</div>
                     <div class="session-location">
-                        📍 <a href="https://www.google.com/maps/search/?api=1&query=470+N+SR+89A,+Sedona,+AZ">Gateway Cottage Wellness Center</a><br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=470+N+SR+89A,+Sedona,+AZ">Gateway Cottage Wellness Center</a><br>
                         470 N SR 89A, Uptown Sedona · <a href="tel:+19288624400">(928) 862-4400</a><br>
                         <span class="tbd">Confirmation: [Add]</span>
                     </div>
@@ -764,18 +633,12 @@
             </div>
         </section>
 
-        <!-- Southwest Flights -->
+        <!-- Flights -->
         <section id="flights">
-            <div class="section-header">
-                <div class="section-icon">✈️</div>
-                <h2>Southwest Flights</h2>
-            </div>
+            <h2>Southwest Flights</h2>
 
-            <div class="card flight-card">
-                <div class="flight-header">
-                    <span class="flight-direction">Departing · Fri Oct 23</span>
-                    <span class="flight-number">Flight 3832</span>
-                </div>
+            <div class="flight-box">
+                <div class="flight-label">Departing · Fri Oct 23 · Flight 3832</div>
                 <div class="flight-route">
                     <div class="flight-city">
                         <div class="flight-code">SJC</div>
@@ -787,14 +650,11 @@
                         <div class="flight-time">8:15 AM</div>
                     </div>
                 </div>
-                <div class="flight-details">Nonstop · Boeing 737 MAX 8</div>
+                <div class="flight-meta">Nonstop · Boeing 737 MAX 8</div>
             </div>
 
-            <div class="card flight-card">
-                <div class="flight-header">
-                    <span class="flight-direction">Returning · Mon Oct 26</span>
-                    <span class="flight-number">Flight 2893</span>
-                </div>
+            <div class="flight-box">
+                <div class="flight-label">Returning · Mon Oct 26 · Flight 2893</div>
                 <div class="flight-route">
                     <div class="flight-city">
                         <div class="flight-code">PHX</div>
@@ -806,154 +666,135 @@
                         <div class="flight-time">4:25 PM</div>
                     </div>
                 </div>
-                <div class="flight-details">Nonstop · Boeing 737-700</div>
+                <div class="flight-meta">Nonstop · Boeing 737-700</div>
             </div>
 
-            <div class="card">
-                <div class="card-row">
-                    <span class="card-label">Confirmation #</span>
-                    <span class="card-value tbd">[Add]</span>
+            <div class="info-card">
+                <div class="info-row">
+                    <span class="info-label">Confirmation</span>
+                    <span class="info-value tbd">[Add]</span>
                 </div>
             </div>
         </section>
 
         <!-- Amara Resort -->
         <section id="amara">
-            <div class="section-header">
-                <div class="section-icon">🏨</div>
-                <h2>Amara Resort & Spa</h2>
-            </div>
+            <h2>Amara Resort & Spa</h2>
 
-            <div class="card">
-                <div class="card-row">
-                    <span class="card-label">Address</span>
-                    <span class="card-value">
-                        <a href="https://www.google.com/maps/search/?api=1&query=100+Amara+Lane,+Sedona,+AZ+86336" class="address-link">100 Amara Lane, Sedona, AZ 86336</a>
-                    </span>
+            <div class="info-card">
+                <div class="info-row">
+                    <span class="info-label">Address</span>
+                    <span class="info-value"><a href="https://www.google.com/maps/search/?api=1&query=100+Amara+Lane,+Sedona,+AZ+86336">100 Amara Lane, Sedona, AZ 86336</a></span>
                 </div>
-                <div class="card-row">
-                    <span class="card-label">Phone</span>
-                    <span class="card-value">
-                        <a href="tel:+19282824828" class="phone-link">(928) 282-4828</a>
-                    </span>
+                <div class="info-row">
+                    <span class="info-label">Phone</span>
+                    <span class="info-value"><a href="tel:+19282824828">(928) 282-4828</a></span>
                 </div>
-                <div class="card-row">
-                    <span class="card-label">Check-in</span>
-                    <span class="card-value">4:00 PM</span>
+                <div class="info-row">
+                    <span class="info-label">Check-in</span>
+                    <span class="info-value">4:00 PM</span>
                 </div>
-                <div class="card-row">
-                    <span class="card-label">Check-out</span>
-                    <span class="card-value">11:00 AM</span>
+                <div class="info-row">
+                    <span class="info-label">Check-out</span>
+                    <span class="info-value">11:00 AM</span>
                 </div>
-                <div class="card-row">
-                    <span class="card-label">Room</span>
-                    <span class="card-value">721 sq ft Family Suite<br><small>(separated bedroom)</small></span>
+                <div class="info-row">
+                    <span class="info-label">Room</span>
+                    <span class="info-value">721 sq ft Family Suite<br><small>(separated bedroom)</small></span>
                 </div>
-                <div class="card-row">
-                    <span class="card-label">Dining</span>
-                    <span class="card-value">SaltRock Kitchen<br><small>Breakfast 7-10:30a · Dinner 5-10p</small></span>
+                <div class="info-row">
+                    <span class="info-label">Dining</span>
+                    <span class="info-value">SaltRock Kitchen<br><small>Breakfast 7–10:30a, Dinner 5–10p</small></span>
                 </div>
-                <div class="card-row">
-                    <span class="card-label">Perks</span>
-                    <span class="card-value">Heated saltwater infinity pool<br>Golf cart to Uptown</span>
+                <div class="info-row">
+                    <span class="info-label">Perks</span>
+                    <span class="info-value">Heated saltwater pool<br>Golf cart to Uptown</span>
                 </div>
-                <div class="card-row">
-                    <span class="card-label">Confirmation #</span>
-                    <span class="card-value tbd">[Add]</span>
+                <div class="info-row">
+                    <span class="info-label">Confirmation</span>
+                    <span class="info-value tbd">[Add]</span>
                 </div>
             </div>
         </section>
 
         <!-- Day 1: Friday -->
         <section id="day1">
-            <div class="section-header">
-                <div class="section-icon">1️⃣</div>
-                <h2>Day 1 · Friday</h2>
-            </div>
+            <h2>Day-by-Day Itinerary</h2>
 
-            <div class="card">
+            <div class="day-card">
                 <div class="day-header">
-                    <div class="day-number">Day 1</div>
+                    <div class="day-label">Day 1</div>
                     <div class="day-date">Friday, October 23</div>
                     <div class="day-theme">Arrival, West Sedona Shops, Stupa & Elote</div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-time">8:15 AM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Flight 3832 Lands at PHX</div>
-                        <div class="timeline-desc">Deplane, retrieve luggage, take PHX Sky Train to Rental Car Center.</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-time">9:00 AM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Rental Car & Car Seat Staging</div>
-                        <div class="timeline-desc">Pick up midsize/standard SUV, install Marin's car seat, grab morning coffee/snacks and bottled water.</div>
-                        <div class="timeline-note">Rental confirmation: <span class="tbd">[Add]</span></div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-time">10:15 AM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Drive to Sedona (~2-2.5 hours)</div>
-                        <div class="timeline-desc">I-17 North through Sonoran cactus fields into high desert plateau. Optional stretch break: Sunset Point Rest Area (mile marker 252) for sweeping valley views.</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-time">12:45 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Lunch at ChocolaTree Organic Eatery</div>
-                        <div class="timeline-desc">100% organic, vibrant plant dishes, herbal tonics, and raw artisan chocolates in a serene backyard garden.</div>
-                        <div class="timeline-note">
-                            📍 <a href="https://www.google.com/maps/search/?api=1&query=1595+W+SR+89A,+Sedona,+AZ">1595 W SR 89A</a> · Open Fri 10 AM-8 PM
+                <div class="day-content">
+                    <div class="schedule-item">
+                        <div class="schedule-time">8:15 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Flight 3832 Lands at PHX</div>
+                            <div class="schedule-desc">Deplane, retrieve luggage, take PHX Sky Train to Rental Car Center.</div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">1:50 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">The Dragon's Den Sedona</div>
-                        <div class="timeline-desc">Crystals, metaphysical gifts, books, oils, and clothing. Very close to ChocolaTree.</div>
-                        <div class="timeline-note">
-                            📍 <a href="https://www.google.com/maps/search/?api=1&query=1710+W+SR+89A,+Unit+1,+Sedona,+AZ">1710 W SR 89A, Unit 1</a> · Open 8:30 AM-5:00 PM
+                    <div class="schedule-item">
+                        <div class="schedule-time">9:00 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Rental Car & Car Seat</div>
+                            <div class="schedule-desc">Pick up SUV, install Marin's car seat, grab coffee and water for the drive.</div>
+                            <div class="schedule-note">Rental confirmation: <span class="tbd">[Add]</span></div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">2:30 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Amitabha Stupa & Peace Park</div>
-                        <div class="timeline-desc">Stretch Marin's legs. Circumambulate the stupa clockwise three times, spin the prayer wheels, and walk the medicine wheel labyrinth. Smooth gravel trails are stroller-friendly.</div>
-                        <div class="timeline-note">
-                            📍 <a href="https://www.google.com/maps/search/?api=1&query=2650+Pueblo+Dr,+Sedona,+AZ">2650 Pueblo Dr</a> · Free, open daily
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:15 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Drive to Sedona</div>
+                            <div class="schedule-desc">~2–2.5 hours via I-17 North. Optional stretch break at Sunset Point Rest Area (mile 252).</div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">3:20 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Crystal Magic</div>
-                        <div class="timeline-desc">Large selection of crystals, jewelry, singing bowls, flutes, and tarot decks. Right next to the stupa.</div>
-                        <div class="timeline-note">
-                            📍 <a href="https://www.google.com/maps/search/?api=1&query=2978+AZ-89A,+Sedona,+AZ">2978 AZ-89A</a> · Open 10 AM-6 PM
+                    <div class="schedule-item">
+                        <div class="schedule-time">12:45 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Lunch at ChocolaTree Organic Eatery</div>
+                            <div class="schedule-desc">Organic plant dishes, herbal tonics, raw chocolates in a backyard garden.</div>
+                            <div class="schedule-note"><a href="https://www.google.com/maps/search/?api=1&query=1595+W+SR+89A,+Sedona,+AZ">1595 W SR 89A</a> · Fri 10 AM–8 PM</div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">4:15 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Check In & Oak Creek Sunset Walk</div>
-                        <div class="timeline-desc">Settle into the 721 sq ft suite at Amara, then walk the private creekside trail under golden sycamores. Marin can safely toss pebbles into shallow pools. Sunset is about 5:45 PM.</div>
-                        <div class="timeline-note">
-                            📍 <a href="https://www.google.com/maps/search/?api=1&query=100+Amara+Lane,+Sedona,+AZ">100 Amara Ln</a> · Check-in 4:00 PM
+                    <div class="schedule-item">
+                        <div class="schedule-time">1:50 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">The Dragon's Den Sedona</div>
+                            <div class="schedule-desc">Crystals, metaphysical gifts, books, oils. Very close to ChocolaTree.</div>
+                            <div class="schedule-note"><a href="https://www.google.com/maps/search/?api=1&query=1710+W+SR+89A,+Unit+1,+Sedona,+AZ">1710 W SR 89A, Unit 1</a> · 8:30 AM–5 PM</div>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">2:30 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Amitabha Stupa & Peace Park</div>
+                            <div class="schedule-desc">Circumambulate the stupa, spin prayer wheels, walk the labyrinth. Stroller-friendly gravel trails.</div>
+                            <div class="schedule-note"><a href="https://www.google.com/maps/search/?api=1&query=2650+Pueblo+Dr,+Sedona,+AZ">2650 Pueblo Dr</a> · Free, open daily</div>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">3:20 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Crystal Magic</div>
+                            <div class="schedule-desc">Crystals, singing bowls, flutes, tarot decks. Right next to the stupa.</div>
+                            <div class="schedule-note"><a href="https://www.google.com/maps/search/?api=1&query=2978+AZ-89A,+Sedona,+AZ">2978 AZ-89A</a> · 10 AM–6 PM</div>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">4:15 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Check In & Creek Walk</div>
+                            <div class="schedule-desc">Settle in at Amara, then walk the creekside trail. Marin can toss pebbles. Sunset ~5:45 PM.</div>
+                            <div class="schedule-note"><a href="https://www.google.com/maps/search/?api=1&query=100+Amara+Lane,+Sedona,+AZ">100 Amara Ln</a> · Check-in 4 PM</div>
                         </div>
                     </div>
                 </div>
@@ -962,70 +803,61 @@
 
         <!-- Day 2: Saturday -->
         <section id="day2">
-            <div class="section-header">
-                <div class="section-icon">2️⃣</div>
-                <h2>Day 2 · Saturday</h2>
-            </div>
-
-            <div class="card">
+            <div class="day-card">
                 <div class="day-header birthday">
-                    <div class="day-number">Day 2 <span class="birthday-day-badge">🎂 Birthday Day</span></div>
+                    <div class="day-label">Day 2 — Chinh's Birthday</div>
                     <div class="day-date">Saturday, October 24</div>
-                    <div class="day-theme">Uptown & Tlaquepaque: Healing, Views & a Reading</div>
+                    <div class="day-theme">Tlaquepaque, Healing Sessions & Birthday Dinner</div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-time">8:30 AM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Breakfast at Wildcraft Kitchen</div>
-                        <div class="timeline-desc">Scratch-kitchen, seed-oil-free breakfast. Lots of gluten-free and vegan options, outdoor seating with views. Can have a line early.</div>
-                        <div class="timeline-note">
-                            📍 <a href="https://www.google.com/maps/search/?api=1&query=345+Jordan+Rd,+Sedona,+AZ">345 Jordan Rd</a> · Opens 7 AM Sat · <a href="tel:+19288622541">(928) 862-2541</a>
+                <div class="day-content">
+                    <div class="schedule-item">
+                        <div class="schedule-time">8:30 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Breakfast at Wildcraft Kitchen</div>
+                            <div class="schedule-desc">Scratch-kitchen, seed-oil-free. Gluten-free and vegan options, outdoor seating.</div>
+                            <div class="schedule-note"><a href="https://www.google.com/maps/search/?api=1&query=345+Jordan+Rd,+Sedona,+AZ">345 Jordan Rd</a> · Opens 7 AM · <a href="tel:+19288622541">(928) 862-2541</a></div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">10:00 AM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Walk around and explore Tlaquepaque</div>
-                        <div class="timeline-desc">Arts village with galleries, boutiques, and courtyards.</div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:00 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Explore Tlaquepaque</div>
+                            <div class="schedule-desc">Arts village with galleries, boutiques, and courtyards.</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">11:30 AM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Lunch at The Secret Garden Cafe</div>
-                        <div class="timeline-desc">Charming cafe at Tlaquepaque.</div>
-                        <div class="timeline-note">No reservation option</div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">11:30 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Lunch at The Secret Garden Cafe</div>
+                            <div class="schedule-desc">Charming cafe at Tlaquepaque.</div>
+                            <div class="schedule-note">No reservation option</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">1:00 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Marin's Nap</div>
-                        <div class="timeline-desc">Quiet time back at Amara.</div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">1:00 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Marin's Nap</div>
+                            <div class="schedule-desc">Quiet time back at Amara.</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">3:00 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Session 1 & 2: Akashic Records & Reiki — Chinh</div>
-                        <div class="timeline-desc">Healing sessions during nap time.</div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">3:00 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Akashic Records & Reiki — Chinh</div>
+                            <div class="schedule-desc">Sessions 1 & 2 (until 5:30 PM). Healing work during nap time.</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">7:00 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">🎂 Birthday Dinner at Costa by Madrid</div>
-                        <div class="timeline-desc">Elevated Latin tapas and cocktails. Happy hour 4-6 PM.</div>
-                        <div class="timeline-note">
-                            📍 <a href="https://www.google.com/maps/search/?api=1&query=150+AZ-179,+Ste+9,+Sedona,+AZ">150 AZ-179, Ste 9</a> · <a href="tel:+19282828911">(928) 282-8911</a><br>
-                            Reservation under Deenah 7 PM · Backup: The Vault Uptown
+                    <div class="schedule-item">
+                        <div class="schedule-time">7:00 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Birthday Dinner at Costa by Madrid</div>
+                            <div class="schedule-desc">Elevated Latin tapas and cocktails.</div>
+                            <div class="schedule-note"><a href="https://www.google.com/maps/search/?api=1&query=150+AZ-179,+Ste+9,+Sedona,+AZ">150 AZ-179, Ste 9</a> · <a href="tel:+19282828911">(928) 282-8911</a><br>Reservation under Deenah 7 PM · Backup: The Vault Uptown</div>
                         </div>
                     </div>
                 </div>
@@ -1034,78 +866,68 @@
 
         <!-- Day 3: Sunday -->
         <section id="day3">
-            <div class="section-header">
-                <div class="section-icon">3️⃣</div>
-                <h2>Day 3 · Sunday</h2>
-            </div>
-
-            <div class="card">
+            <div class="day-card">
                 <div class="day-header">
-                    <div class="day-number">Day 3</div>
+                    <div class="day-label">Day 3</div>
                     <div class="day-date">Sunday, October 25</div>
                     <div class="day-theme">Vortex Quest, Slow Afternoon & Italian Dinner</div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-time">9:00 AM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Breakfast</div>
-                        <div class="timeline-desc">SaltRock Kitchen at Amara opens early enough for a Palatki start.</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-time">10:00 AM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Vortex Side Quest</div>
-                        <div class="timeline-desc">Morning vortex exploration.</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-time">11:45 AM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Lunch at The Hudson</div>
-                        <div class="timeline-desc">Red-rock patio views. Open daily from 11:30 AM.</div>
-                        <div class="timeline-note">
-                            📍 <a href="https://www.google.com/maps/search/?api=1&query=671+AZ-179,+Ste+D,+Sedona,+AZ">671 AZ-179, Ste D</a><br>
-                            Reservation at 11:45 · Backup: Hideaway House
+                <div class="day-content">
+                    <div class="schedule-item">
+                        <div class="schedule-time">9:00 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Breakfast</div>
+                            <div class="schedule-desc">SaltRock Kitchen at Amara.</div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">1:00 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Marin's Nap · Sports Massage — Craig</div>
-                        <div class="timeline-desc">1:00-1:45 PM Sports Massage for Craig during nap time.</div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:00 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Vortex Side Quest</div>
+                            <div class="schedule-desc">Morning vortex exploration.</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">3:00 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Last Session: Craniosacral Massage — Chinh</div>
-                        <div class="timeline-desc">3:00-4:15 PM final healing session.</div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">11:45 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Lunch at The Hudson</div>
+                            <div class="schedule-desc">Red-rock patio views.</div>
+                            <div class="schedule-note"><a href="https://www.google.com/maps/search/?api=1&query=671+AZ-179,+Ste+D,+Sedona,+AZ">671 AZ-179, Ste D</a><br>Reservation at 11:45 · Backup: Hideaway House</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">3:00 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Intuitive Reading — Craig</div>
-                        <div class="timeline-desc">3:00-3:45 PM intuitive reading.</div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">1:00 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Marin's Nap / Sports Massage — Craig</div>
+                            <div class="schedule-desc">1:00–1:45 PM massage for Craig during nap time.</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">7:00 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Dinner at Vespa Healthy Italian Cafe</div>
-                        <div class="timeline-desc">Sicilian-owned, rated 4.8 on Google. Known for pizza, lasagna, and fresh pasta. Casual and easy with a toddler.</div>
-                        <div class="timeline-note">
-                            📍 <a href="https://www.google.com/maps/search/?api=1&query=1350+W+SR+89A,+Ste+22,+Sedona,+AZ">1350 W SR 89A, Ste 22, West Sedona</a> · <a href="tel:+19288622228">(928) 862-2228</a><br>
-                            Reservation: <span class="tbd">[Add]</span>
+                    <div class="schedule-item">
+                        <div class="schedule-time">3:00 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Craniosacral Massage — Chinh</div>
+                            <div class="schedule-desc">3:00–4:15 PM final healing session.</div>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">3:00 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Intuitive Reading — Craig</div>
+                            <div class="schedule-desc">3:00–3:45 PM.</div>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">7:00 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Dinner at Vespa Healthy Italian Cafe</div>
+                            <div class="schedule-desc">Sicilian-owned, rated 4.8. Pizza, lasagna, fresh pasta. Casual with a toddler.</div>
+                            <div class="schedule-note"><a href="https://www.google.com/maps/search/?api=1&query=1350+W+SR+89A,+Ste+22,+Sedona,+AZ">1350 W SR 89A, Ste 22</a> · <a href="tel:+19288622228">(928) 862-2228</a><br>Reservation: <span class="tbd">[Add]</span></div>
                         </div>
                     </div>
                 </div>
@@ -1114,384 +936,246 @@
 
         <!-- Day 4: Monday -->
         <section id="day4">
-            <div class="section-header">
-                <div class="section-icon">4️⃣</div>
-                <h2>Day 4 · Monday</h2>
-            </div>
-
-            <div class="card">
+            <div class="day-card">
                 <div class="day-header">
-                    <div class="day-number">Day 4</div>
+                    <div class="day-label">Day 4</div>
                     <div class="day-date">Monday, October 26</div>
-                    <div class="day-theme">Final Creek Morning & Easy Return to PHX</div>
+                    <div class="day-theme">Final Creek Morning & Return to PHX</div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-time">8:30 AM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Final Creek Reflection & Breakfast</div>
-                        <div class="timeline-desc">One last pebble-toss with Marin and morning grounding by Oak Creek. Pack up and check out of Amara.</div>
-                        <div class="timeline-note">Check-out 11:00 AM</div>
+                <div class="day-content">
+                    <div class="schedule-item">
+                        <div class="schedule-time">8:30 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Final Creek Morning & Breakfast</div>
+                            <div class="schedule-desc">One last pebble-toss with Marin by Oak Creek. Pack up.</div>
+                            <div class="schedule-note">Check-out 11:00 AM</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">10:00 AM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Drive Sedona to PHX Airport</div>
-                        <div class="timeline-desc">Smooth 2-hour drive south on AZ-179 / I-17 back toward Phoenix.</div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:00 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Drive to PHX Airport</div>
+                            <div class="schedule-desc">~2 hours south on AZ-179 / I-17.</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">12:15 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Rental Car Return & Sky Train</div>
-                        <div class="timeline-desc">Drop car at PHX Rental Car Center, check bags, take Sky Train to departure gate.</div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">12:15 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Return Car & Check In</div>
+                            <div class="schedule-desc">Drop car at Rental Center, check bags, Sky Train to gate.</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-time">2:35 PM</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Flight 2893 Departs PHX</div>
-                        <div class="timeline-desc">Lands home at SJC at 4:25 PM.</div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">2:35 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Flight 2893 Departs</div>
+                            <div class="schedule-desc">Lands home at SJC 4:25 PM.</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Restaurant Plan -->
-        <section id="restaurants">
-            <div class="section-header">
-                <div class="section-icon">🍽️</div>
-                <h2>Restaurant Plan</h2>
-            </div>
+        <!-- Dining -->
+        <section id="dining">
+            <h2>Restaurant Plan</h2>
 
-            <div class="meal-grid">
-                <div class="meal-item">
+            <ul class="meal-list">
+                <li class="meal-item">
                     <div class="meal-when">Friday Lunch</div>
                     <div class="meal-name">ChocolaTree Organic Eatery</div>
                     <div class="meal-details">
                         <a href="https://www.google.com/maps/search/?api=1&query=1595+W+SR+89A,+Sedona,+AZ">1595 W SR 89A, West Sedona</a><br>
-                        Organic vegetarian, many vegan options · Fri 10 AM-8 PM
+                        Organic vegetarian, many vegan options · Fri 10 AM–8 PM<br>
+                        Reserve: <span class="tbd">[Check]</span>
                     </div>
-                    <div class="meal-reserve">Reserve: <span class="tbd">[Check]</span></div>
-                </div>
+                </li>
 
-                <div class="meal-item">
+                <li class="meal-item">
                     <div class="meal-when">Friday Dinner</div>
                     <div class="meal-name">Elote Cafe</div>
                     <div class="meal-details">
-                        Uptown Sedona · Tue-Sat 5-9 PM · <a href="tel:+19282030105">(928) 203-0105</a><br>
-                        Popular, book as early as you can.
+                        Uptown Sedona · Tue–Sat 5–9 PM · <a href="tel:+19282030105">(928) 203-0105</a><br>
+                        Popular, book early<br>
+                        Reserve: <span class="tbd">[Reserve]</span>
                     </div>
-                    <div class="meal-reserve">Reserve: <span class="tbd">[Reserve]</span></div>
-                </div>
+                </li>
 
-                <div class="meal-item">
+                <li class="meal-item">
                     <div class="meal-when">Saturday Breakfast</div>
                     <div class="meal-name">Wildcraft Kitchen</div>
                     <div class="meal-details">
-                        <a href="https://www.google.com/maps/search/?api=1&query=345+Jordan+Rd,+Sedona,+AZ">345 Jordan Rd</a> · Sat 7 AM-3 PM · <a href="tel:+19288622541">(928) 862-2541</a><br>
-                        Scratch kitchen, seed-oil-free, outdoor seating with views. Can have a line early.
+                        <a href="https://www.google.com/maps/search/?api=1&query=345+Jordan+Rd,+Sedona,+AZ">345 Jordan Rd</a> · Sat 7 AM–3 PM · <a href="tel:+19288622541">(928) 862-2541</a><br>
+                        Scratch kitchen, seed-oil-free, outdoor seating<br>
+                        Reserve: <span class="tbd">[Check]</span>
                     </div>
-                    <div class="meal-reserve">Reserve: <span class="tbd">[Check]</span></div>
-                </div>
+                </li>
 
-                <div class="meal-item">
+                <li class="meal-item">
                     <div class="meal-when">Saturday Lunch</div>
                     <div class="meal-name">The Secret Garden Cafe</div>
                     <div class="meal-details">
                         Tlaquepaque · No reservation option
                     </div>
-                </div>
+                </li>
 
-                <div class="meal-item">
-                    <div class="meal-when">Saturday Dinner 🎂</div>
+                <li class="meal-item">
+                    <div class="meal-when">Saturday Dinner — Birthday</div>
                     <div class="meal-name">Costa by Madrid</div>
                     <div class="meal-details">
-                        <a href="https://www.google.com/maps/search/?api=1&query=150+AZ-179,+Ste+9,+Sedona,+AZ">150 AZ-179, Ste 9</a> · Wed-Sun 4-9 PM · <a href="tel:+19282828911">(928) 282-8911</a><br>
-                        Latin tapas · Happy hour 4-6 PM · Birthday dinner!
+                        <a href="https://www.google.com/maps/search/?api=1&query=150+AZ-179,+Ste+9,+Sedona,+AZ">150 AZ-179, Ste 9</a> · Wed–Sun 4–9 PM · <a href="tel:+19282828911">(928) 282-8911</a><br>
+                        Latin tapas · Happy hour 4–6 PM<br>
+                        Reservation under Deenah 7 PM
                     </div>
-                    <div class="meal-reserve">Reservation under Deenah 7 PM</div>
-                </div>
+                </li>
 
-                <div class="meal-item">
+                <li class="meal-item">
                     <div class="meal-when">Sunday Breakfast</div>
                     <div class="meal-name">SaltRock Kitchen</div>
                     <div class="meal-details">
-                        At Amara · Breakfast 7-10:30 AM
+                        At Amara · Breakfast 7–10:30 AM<br>
+                        No reservation needed
                     </div>
-                    <div class="meal-reserve">No reservation needed</div>
-                </div>
+                </li>
 
-                <div class="meal-item">
+                <li class="meal-item">
                     <div class="meal-when">Sunday Lunch</div>
                     <div class="meal-name">The Hudson</div>
                     <div class="meal-details">
-                        <a href="https://www.google.com/maps/search/?api=1&query=671+AZ-179,+Ste+D,+Sedona,+AZ">671 AZ-179, Ste D</a> · Daily 11:30 AM-9 PM · <a href="tel:+19288624099">(928) 862-4099</a><br>
-                        Patio with red-rock views
+                        <a href="https://www.google.com/maps/search/?api=1&query=671+AZ-179,+Ste+D,+Sedona,+AZ">671 AZ-179, Ste D</a> · Daily 11:30 AM–9 PM · <a href="tel:+19288624099">(928) 862-4099</a><br>
+                        Patio with red-rock views<br>
+                        Reservation at 11:45
                     </div>
-                    <div class="meal-reserve">Reservation at 11:45</div>
-                </div>
+                </li>
 
-                <div class="meal-item">
+                <li class="meal-item">
                     <div class="meal-when">Sunday Dinner</div>
                     <div class="meal-name">Vespa Healthy Italian Cafe</div>
                     <div class="meal-details">
-                        <a href="https://www.google.com/maps/search/?api=1&query=1350+W+SR+89A,+Ste+22,+Sedona,+AZ">1350 W SR 89A, Ste 22, West Sedona</a> · Sun 11 AM-9 PM · <a href="tel:+19288622228">(928) 862-2228</a><br>
-                        Rated 4.8 on Google. Sicilian-owned; pizza, lasagna, fresh pasta. Casual with a toddler.
+                        <a href="https://www.google.com/maps/search/?api=1&query=1350+W+SR+89A,+Ste+22,+Sedona,+AZ">1350 W SR 89A, Ste 22</a> · Sun 11 AM–9 PM · <a href="tel:+19288622228">(928) 862-2228</a><br>
+                        Sicilian-owned, 4.8 rating. Pizza, lasagna, pasta.<br>
+                        Reserve: <span class="tbd">[Check]</span>
                     </div>
-                    <div class="meal-reserve">Reserve: <span class="tbd">[Check]</span></div>
-                </div>
+                </li>
+            </ul>
+
+            <div class="backup-title">Backups with a view</div>
+            <div class="backup-list">
+                <p><strong>The Hudson</strong> · <a href="https://www.google.com/maps/search/?api=1&query=671+AZ-179,+Ste+D,+Sedona,+AZ">671 AZ-179, Ste D</a> · <a href="tel:+19288624099">(928) 862-4099</a> · Daily 11:30 AM–9 PM · Patio views</p>
+                <p><strong>The Vault Uptown</strong> · <a href="https://www.google.com/maps/search/?api=1&query=361+Forest+Rd,+Sedona,+AZ">361 Forest Rd</a> · <a href="tel:+19282035462">(928) 203-5462</a> · Daily 11 AM–9 PM</p>
+                <p><strong>Broome & Orchard</strong> · <a href="https://www.google.com/maps/search/?api=1&query=101+N+SR+89A,+Sedona,+AZ">101 N SR 89A, Uptown</a> · <a href="tel:+19282822713">(928) 282-2713</a> · Upscale American, live music</p>
+                <p><strong>Mariposa</strong> · <a href="https://www.google.com/maps/search/?api=1&query=700+W+AZ-89A,+Sedona,+AZ">700 W AZ-89A</a> · <a href="tel:+19288624444">(928) 862-4444</a> · Sun 4:30–9 PM · Splurge with sunset views</p>
+                <p><strong>Hideaway House</strong> · <a href="https://www.google.com/maps/search/?api=1&query=231+AZ-179,+Ste+B,+Sedona,+AZ">231 AZ-179, Ste B</a> · <a href="tel:+19282024082">(928) 202-4082</a> · Upper-deck patio, pizza & pasta</p>
+                <p><strong>SaltRock Kitchen</strong> · At Amara · Dinner 5–10 PM · Easy backup, no driving</p>
             </div>
 
-            <div class="backup-section">
-                <div class="backup-title">Backups & More Options with a View</div>
-                
-                <div class="backup-item">
-                    <span class="backup-name">The Hudson</span> · <a href="https://www.google.com/maps/search/?api=1&query=671+AZ-179,+Ste+D,+Sedona,+AZ">671 AZ-179, Ste D</a> · <a href="tel:+19288624099">(928) 862-4099</a><br>
-                    Daily 11:30 AM-9 PM · Rated 4.6 · Patio views; backup for Sunday dinner
-                </div>
-
-                <div class="backup-item">
-                    <span class="backup-name">The Vault Uptown</span> · <a href="https://www.google.com/maps/search/?api=1&query=361+Forest+Rd,+Sedona,+AZ">361 Forest Rd, Uptown</a> · <a href="tel:+19282035462">(928) 203-5462</a><br>
-                    Daily 11 AM-9 PM · Rated 4.4 · Patio views; backup for Saturday dinner
-                </div>
-
-                <div class="backup-item">
-                    <span class="backup-name">Broome & Orchard</span> · <a href="https://www.google.com/maps/search/?api=1&query=101+N+SR+89A,+Sedona,+AZ">101 N SR 89A, Uptown</a> · <a href="tel:+19282822713">(928) 282-2713</a><br>
-                    Fri 3-10, Sat 11-10, Sun 11-9 · Rated 4.5 · Upscale American, live music
-                </div>
-
-                <div class="backup-item">
-                    <span class="backup-name">Mariposa Latin Inspired Grill</span> · <a href="https://www.google.com/maps/search/?api=1&query=700+W+AZ-89A,+Sedona,+AZ">700 W AZ-89A, West Sedona</a> · <a href="tel:+19288624444">(928) 862-4444</a><br>
-                    Sun 4:30-9 PM · Rated 4.4 · Splurge with red-rock views; reserve early for sunset
-                </div>
-
-                <div class="backup-item">
-                    <span class="backup-name">Hideaway House</span> · <a href="https://www.google.com/maps/search/?api=1&query=231+AZ-179,+Ste+B,+Sedona,+AZ">231 AZ-179, Ste B</a> · <a href="tel:+19282024082">(928) 202-4082</a><br>
-                    Sun 11 AM-8:30 PM · Upper-deck patio; pizza & pasta. Bring cash or pay card fee.
-                </div>
-
-                <div class="backup-item">
-                    <span class="backup-name">SaltRock Kitchen</span> · At Amara<br>
-                    Dinner 5-10 PM · Easy backup for any dinner, no driving
-                </div>
-            </div>
-
-            <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--canyon-shadow); font-style: italic;">
-                Sunset is around 5:45 PM, so patio views are best at a 4:30-5:30 dinner. A 7:00 PM table will be after dark.
-            </p>
+            <p class="note">Sunset is around 5:45 PM, so patio views are best at a 4:30–5:30 dinner. A 7:00 PM table will be after dark.</p>
         </section>
 
-        <!-- Tours, Shops & Sacred Sites -->
-        <section id="venues">
-            <div class="section-header">
-                <div class="section-icon">✨</div>
-                <h2>Tours, Shops & Sacred Sites</h2>
-            </div>
+        <!-- Places -->
+        <section id="places">
+            <h2>Tours, Shops & Sacred Sites</h2>
 
-            <!-- Friday Venues -->
-            <div class="venue-card">
-                <div class="venue-badge">Friday · Crystals & Metaphysical Gifts</div>
-                <div class="venue-content">
-                    <div class="venue-name">The Dragon's Den Sedona</div>
-                    <div class="venue-about">Crystals, metaphysical gifts, books, oils, and clothing. Reviewers mention knowledgeable, welcoming staff and quality items.</div>
-                    <div class="venue-details">
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📍</span>
-                            <a href="https://www.google.com/maps/search/?api=1&query=1710+W+State+Rte+89A,+Unit+1,+Sedona,+AZ">1710 W State Rte 89A, Unit 1, West Sedona</a>
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">🕐</span>
-                            Daily 8:30 AM-5:00 PM · <a href="tel:+19288622170">(928) 862-2170</a>
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📅</span>
-                            Visit: Friday 1:50 PM
-                        </div>
-                    </div>
+            <div class="venue-item">
+                <div class="venue-day">Friday</div>
+                <div class="venue-name">The Dragon's Den Sedona</div>
+                <div class="venue-about">Crystals, metaphysical gifts, books, oils, and clothing. Knowledgeable staff.</div>
+                <div class="venue-details">
+                    <a href="https://www.google.com/maps/search/?api=1&query=1710+W+State+Rte+89A,+Unit+1,+Sedona,+AZ">1710 W State Rte 89A, Unit 1</a><br>
+                    Daily 8:30 AM–5 PM · <a href="tel:+19288622170">(928) 862-2170</a><br>
+                    Visit: Friday 1:50 PM
                 </div>
             </div>
 
-            <div class="venue-card">
-                <div class="venue-badge">Friday · Sacred Outdoor Sanctuary</div>
-                <div class="venue-content">
-                    <div class="venue-name">Amitabha Stupa & Peace Park</div>
-                    <div class="venue-about">14 acres of sacred juniper forest with two consecrated Tibetan stupas, prayer wheels, and an outdoor labyrinth. Flat, wide gravel pathways are exceptionally stroller-friendly.</div>
-                    <div class="venue-details">
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📍</span>
-                            <a href="https://www.google.com/maps/search/?api=1&query=2650+Pueblo+Dr,+Sedona,+AZ">2650 Pueblo Dr, West Sedona</a>
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">🕐</span>
-                            Open daily · Free admission
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📅</span>
-                            Visit: Friday 2:30 PM (confirm hours before going)
-                        </div>
-                    </div>
+            <div class="venue-item">
+                <div class="venue-day">Friday</div>
+                <div class="venue-name">Amitabha Stupa & Peace Park</div>
+                <div class="venue-about">14 acres of sacred juniper forest with Tibetan stupas, prayer wheels, and labyrinth. Stroller-friendly gravel paths.</div>
+                <div class="venue-details">
+                    <a href="https://www.google.com/maps/search/?api=1&query=2650+Pueblo+Dr,+Sedona,+AZ">2650 Pueblo Dr, West Sedona</a><br>
+                    Open daily · Free admission<br>
+                    Visit: Friday 2:30 PM (confirm hours)
                 </div>
             </div>
 
-            <div class="venue-card">
-                <div class="venue-badge">Friday · Crystals, Bowls & Tarot Decks</div>
-                <div class="venue-content">
-                    <div class="venue-name">Crystal Magic</div>
-                    <div class="venue-about">Large shop with crystals, jewelry, singing bowls, flutes, and a big tarot deck selection. Father/daughter owned, the oldest crystal store in town.</div>
-                    <div class="venue-details">
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📍</span>
-                            <a href="https://www.google.com/maps/search/?api=1&query=2978+AZ-89A,+Sedona,+AZ">2978 AZ-89A, West Sedona</a>
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">🕐</span>
-                            Daily 10:00 AM-6:00 PM · <a href="tel:+19282821622">(928) 282-1622</a>
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📅</span>
-                            Visit: Friday 3:20 PM (right next to the stupa)
-                        </div>
-                    </div>
+            <div class="venue-item">
+                <div class="venue-day">Friday</div>
+                <div class="venue-name">Crystal Magic</div>
+                <div class="venue-about">Large selection of crystals, singing bowls, flutes, tarot decks. Father/daughter owned, oldest crystal store in town.</div>
+                <div class="venue-details">
+                    <a href="https://www.google.com/maps/search/?api=1&query=2978+AZ-89A,+Sedona,+AZ">2978 AZ-89A, West Sedona</a><br>
+                    Daily 10 AM–6 PM · <a href="tel:+19282821622">(928) 282-1622</a><br>
+                    Visit: Friday 3:20 PM (next to stupa)
                 </div>
             </div>
 
-            <!-- Saturday Venues -->
-            <div class="venue-card">
-                <div class="venue-badge">Saturday · Craniosacral & Energy Balancing</div>
-                <div class="venue-content">
-                    <div class="venue-name">Gateway Cottage Wellness Center</div>
-                    <div class="venue-about">Vetted master intuitive healers offering 60-90 min private sessions in craniosacral therapy, chakra clearing, sound alignment, and aura reading. 5-min walk from Amara.</div>
-                    <div class="venue-details">
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📍</span>
-                            <a href="https://www.google.com/maps/search/?api=1&query=470+N+SR+89A,+Sedona,+AZ">470 N SR 89A, Uptown Sedona</a>
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📞</span>
-                            <a href="tel:+19288624400">(928) 862-4400</a>
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📅</span>
-                            Saturday 10:00 AM, 60 min · Price: <span class="tbd">[Amount]</span> · Confirmation: <span class="tbd">[Add]</span>
-                        </div>
-                    </div>
+            <div class="venue-item">
+                <div class="venue-day">Saturday</div>
+                <div class="venue-name">Gateway Cottage Wellness Center</div>
+                <div class="venue-about">Intuitive healers offering craniosacral therapy, chakra clearing, sound alignment, aura reading. 5-min walk from Amara.</div>
+                <div class="venue-details">
+                    <a href="https://www.google.com/maps/search/?api=1&query=470+N+SR+89A,+Sedona,+AZ">470 N SR 89A, Uptown Sedona</a><br>
+                    <a href="tel:+19288624400">(928) 862-4400</a><br>
+                    Saturday 10:00 AM, 60 min · Price: <span class="tbd">[Amount]</span> · Confirmation: <span class="tbd">[Add]</span>
                 </div>
             </div>
 
-            <div class="venue-card">
-                <div class="venue-badge">Saturday · Aura Imaging & Diagnostics</div>
-                <div class="venue-content">
-                    <div class="venue-name">Center for the New Age</div>
-                    <div class="venue-about">Sedona's historic metaphysical hub. Offers printed bio-field aura photos and chakra readouts to visually map your energetic centers.</div>
-                    <div class="venue-details">
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📍</span>
-                            <a href="https://www.google.com/maps/search/?api=1&query=341+SR+179,+Sedona,+AZ">341 SR 179</a> (across from Tlaquepaque) · Walk-ins welcome
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📅</span>
-                            Saturday 1:00 PM (open 10 AM-7 PM) · Price: <span class="tbd">[Amount]</span>
-                        </div>
-                    </div>
+            <div class="venue-item">
+                <div class="venue-day">Saturday</div>
+                <div class="venue-name">Center for the New Age</div>
+                <div class="venue-about">Sedona's metaphysical hub. Aura photos and chakra readouts.</div>
+                <div class="venue-details">
+                    <a href="https://www.google.com/maps/search/?api=1&query=341+SR+179,+Sedona,+AZ">341 SR 179</a> (across from Tlaquepaque) · Walk-ins welcome<br>
+                    Saturday 1:00 PM (open 10 AM–7 PM) · Price: <span class="tbd">[Amount]</span>
                 </div>
             </div>
 
-            <div class="venue-card">
-                <div class="venue-badge">Saturday · Psychic & Tarot Readings</div>
-                <div class="venue-content">
-                    <div class="venue-name">Green Witch Creations</div>
-                    <div class="venue-about">Readings plus a shop with teas, jewelry, and books. Reviewers praise a reader who starts with a birth chart, and mention a rooftop view.</div>
-                    <div class="venue-details">
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📍</span>
-                            <a href="https://www.google.com/maps/search/?api=1&query=247+N+State+Rte+89A,+Ste+3,+Sedona,+AZ">247 N State Rte 89A, Ste 3, Uptown Sedona</a> (steps from Amara)
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">🕐</span>
-                            Daily 10:00 AM-8:00 PM · <a href="tel:+19285541924">(928) 554-1924</a>
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📅</span>
-                            Saturday 6:30 PM · Price: <span class="tbd">[Amount]</span> · Reading time: <span class="tbd">[Confirm]</span>
-                        </div>
-                    </div>
+            <div class="venue-item">
+                <div class="venue-day">Saturday</div>
+                <div class="venue-name">Green Witch Creations</div>
+                <div class="venue-about">Readings plus shop with teas, jewelry, books. Birth chart readings, rooftop view.</div>
+                <div class="venue-details">
+                    <a href="https://www.google.com/maps/search/?api=1&query=247+N+State+Rte+89A,+Ste+3,+Sedona,+AZ">247 N State Rte 89A, Ste 3, Uptown</a> (steps from Amara)<br>
+                    Daily 10 AM–8 PM · <a href="tel:+19285541924">(928) 554-1924</a><br>
+                    Saturday 6:30 PM · Price: <span class="tbd">[Amount]</span> · Time: <span class="tbd">[Confirm]</span>
                 </div>
             </div>
 
-            <!-- Sunday Venue -->
-            <div class="venue-card">
-                <div class="venue-badge">Sunday · Guided Cliff Dwelling Tour</div>
-                <div class="venue-content">
-                    <div class="venue-name">Palatki Heritage Site</div>
-                    <div class="venue-about">Ancient cliff dwellings and rock art. Tour runs about 1 hour 15 minutes. About 70 uneven steps; not stroller-friendly. Limited cell service—download your reservation before leaving town.</div>
-                    <div class="venue-details">
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📍</span>
-                            <a href="https://www.google.com/maps/search/?api=1&query=Palatki+Heritage+Site,+Sedona,+AZ">Forest Road 795 off FR 525</a>, northwest of Sedona (rough gravel road)
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">🎟️</span>
-                            <a href="https://www.recreation.gov/ticket/10089352/ticket/10089353">Book on Recreation.gov</a> · Ticket is per individual. <span class="tbd">[Check if Marin needs one]</span>
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">🪪</span>
-                            Red Rock Pass or Federal Interagency Pass required (can buy on site)
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">🕐</span>
-                            Oct-May: 9:30 AM-3 PM daily except Wed; last tour starts 2 PM · <a href="tel:+19282037500">(928) 203-7500</a>
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">⚠️</span>
-                            Leave 1¼ hrs before slot. Arrive 15 min early. Photo ID required. No pets past parking.
-                        </div>
-                        <div class="venue-detail">
-                            <span class="venue-detail-icon">📅</span>
-                            Tour time: <span class="tbd">[Add, aim for morning]</span> · Confirmation: <span class="tbd">[Add]</span>
-                        </div>
-                    </div>
+            <div class="venue-item">
+                <div class="venue-day">Sunday</div>
+                <div class="venue-name">Palatki Heritage Site</div>
+                <div class="venue-about">Ancient cliff dwellings and rock art. Tour ~1 hr 15 min, ~70 uneven steps, not stroller-friendly. Limited cell service—download reservation before leaving.</div>
+                <div class="venue-details">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Palatki+Heritage+Site,+Sedona,+AZ">Forest Road 795 off FR 525</a>, NW of Sedona (rough gravel)<br>
+                    <a href="https://www.recreation.gov/ticket/10089352/ticket/10089353">Book on Recreation.gov</a> · Red Rock Pass required (buy on site)<br>
+                    Oct–May: 9:30 AM–3 PM daily except Wed · <a href="tel:+19282037500">(928) 203-7500</a><br>
+                    Leave 1¼ hrs early, arrive 15 min before. Photo ID required.<br>
+                    Tour time: <span class="tbd">[Add, aim for morning]</span> · Confirmation: <span class="tbd">[Add]</span>
                 </div>
             </div>
         </section>
 
-        <!-- Amara Tips -->
+        <!-- Tips -->
         <section id="tips">
-            <div class="section-header">
-                <div class="section-icon">💡</div>
-                <h2>Amara Suite & Travel Tips</h2>
-            </div>
+            <h2>Travel Tips</h2>
 
-            <div class="card">
-                <ul class="tips-list">
-                    <li>
-                        <span class="tip-icon">👶</span>
-                        <span><strong>Toddler Setup:</strong> Contact Amara front desk/concierge in advance to have a crib / Pack 'n Play placed in the master bedroom of your 721 sq ft suite.</span>
-                    </li>
-                    <li>
-                        <span class="tip-icon">💆</span>
-                        <span><strong>Healer Reservations:</strong> Call Gateway Cottage Wellness 3-4 weeks ahead to reserve your Saturday morning craniosacral/chakra session.</span>
-                    </li>
-                    <li>
-                        <span class="tip-icon">💧</span>
-                        <span><strong>Hydration & Altitude:</strong> Sedona sits at ~4,300 ft; drink plenty of water and electrolytes to support somatic and subtle-body releases.</span>
-                    </li>
-                </ul>
-            </div>
+            <ul class="tips-list">
+                <li><strong>Toddler Setup:</strong> Contact Amara in advance for a crib / Pack 'n Play in the master bedroom.</li>
+                <li><strong>Healer Reservations:</strong> Call Gateway Cottage 3–4 weeks ahead for Chinh's sessions.</li>
+                <li><strong>Hydration:</strong> Sedona is ~4,300 ft elevation. Drink plenty of water and electrolytes.</li>
+            </ul>
         </section>
     </main>
 
     <footer>
-        <div class="footer-birthday">Happy Birthday, Chinh! 🎂</div>
-        <p>Oct 23-26, 2026 · Sedona, Arizona</p>
+        <p>Happy Birthday, Chinh</p>
+        <div class="footer-dates">October 23–26, 2026 · Sedona, Arizona</div>
     </footer>
 
     <script>
-        // Smooth scroll for nav links
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
