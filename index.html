@@ -1303,6 +1303,96 @@
             margin-top: 0.75rem;
         }
 
+        .header-copy {
+            position: relative;
+        }
+
+        .sticker {
+            display: block;
+            height: auto;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .section-head h2 {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .sticker-end {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .sticker-broom {
+            width: 108px;
+            margin: 0.7rem auto 0;
+        }
+
+        .sticker-wand {
+            width: 92px;
+            margin: 0.15rem 0 0 auto;
+        }
+
+        .sticker-cat {
+            width: 100px;
+            margin: 0.15rem 0 0 auto;
+        }
+
+        .chooser-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.45rem;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .chooser-head h2 {
+            padding-right: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .sticker-peek {
+            width: 62px;
+            flex: 0 0 auto;
+            margin-top: -0.35rem;
+        }
+
+        .sticker-potion,
+        .sticker-reading-sit,
+        .sticker-reading-open,
+        .sticker-crouch {
+            flex: 0 0 auto;
+            margin: -0.35rem 0 0;
+        }
+
+        .sticker-potion { width: 78px; }
+        .sticker-reading-sit { width: 80px; }
+        .sticker-reading-open { width: 84px; }
+        .sticker-crouch { width: 76px; }
+
+        @keyframes broom-drift {
+            0%, 100% { transform: translate(0, 0) rotate(-3deg); }
+            50% { transform: translate(7px, -6px) rotate(4deg); }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .sticker-broom {
+                animation: broom-drift 6s ease-in-out infinite;
+            }
+        }
+
         .today-btn,
         .text-btn,
         .chip,
@@ -1342,6 +1432,11 @@
         #day-chooser {
             margin-top: 0;
             padding-top: 1.5rem;
+            position: relative;
+        }
+
+        #day-chooser h2 {
+            padding-right: 0;
         }
 
         .day-switch {
@@ -1546,6 +1641,22 @@
             header h1 {
                 font-size: 2.35rem;
             }
+
+            .sticker-broom {
+                position: absolute;
+                right: 0;
+                bottom: -0.4rem;
+                width: 148px;
+                margin: 0;
+            }
+
+            .sticker-wand { width: 140px; }
+            .sticker-cat { width: 148px; }
+            .sticker-peek { width: 104px; }
+            .sticker-potion { width: 118px; }
+            .sticker-reading-sit { width: 120px; }
+            .sticker-reading-open { width: 124px; }
+            .sticker-crouch { width: 114px; }
 
             nav {
                 overflow-x: visible;
@@ -1771,6 +1882,7 @@
         <p class="birthday-wish">Happy Birthday, Chinh</p>
         <p class="scorpio-line">Scorpio sun · Oct 24</p>
         <p class="countdown" id="countdown" aria-live="polite"></p>
+        <img class="sticker sticker-broom" src="images/witches/broom.webp" width="154" height="196" alt="" aria-hidden="true">
         </div>
         </div>
     </header>
@@ -1861,6 +1973,7 @@
                 </div>
                 </div>
             </div>
+            <img class="sticker sticker-wand" src="images/witches/wand.webp" width="140" height="170" alt="" aria-hidden="true" loading="lazy">
         </section>
 
         <!-- Flights -->
@@ -2010,10 +2123,14 @@
                     <span class="info-value tbd">[Add]</span>
                 </div>
             </div>
+            <img class="sticker sticker-cat" src="images/witches/cat.webp" width="148" height="199" alt="" aria-hidden="true" loading="lazy">
         </section>
 
         <section id="day-chooser">
-            <h2>Day by day</h2>
+            <div class="chooser-head">
+                <h2>Day by day</h2>
+                <img class="sticker sticker-peek" src="images/witches/peek.webp" width="104" height="185" alt="" aria-hidden="true" loading="lazy">
+            </div>
             <div class="day-switch" role="tablist" aria-label="Trip days">
                 <button type="button" role="tab" id="day-tab-fri" data-day="day1" aria-controls="day1" aria-selected="true" tabindex="0">
                     <span class="day-switch-date">Fri 10/23</span>
@@ -2385,7 +2502,10 @@
 
         <!-- Dining -->
         <section id="dining">
-            <h2>Restaurant Plan</h2>
+            <div class="section-head">
+                <h2>Restaurant Plan</h2>
+                <img class="sticker sticker-potion" src="images/witches/potion.webp" width="118" height="168" alt="" aria-hidden="true" loading="lazy">
+            </div>
             <p class="page-jump">
                 Dining ·
                 <a href="#places">Places</a> ·
@@ -2644,7 +2764,10 @@
 
         <!-- Packing -->
         <section id="packing">
-            <h2>Chinh's Packing List</h2>
+            <div class="section-head">
+                <h2>Chinh's Packing List</h2>
+                <img class="sticker sticker-reading-sit" src="images/witches/reading-sit.webp" width="120" height="149" alt="" aria-hidden="true" loading="lazy">
+            </div>
             <div class="pack-toolbar">
                 <p class="pack-progress" id="pack-progress">0 of 0 packed</p>
                 <div class="pack-bar" aria-hidden="true"><span id="pack-bar-fill"></span></div>
@@ -2714,7 +2837,10 @@
         </section>
 
         <section id="tips">
-            <h2>Travel Tips</h2>
+            <div class="section-head">
+                <h2>Travel Tips</h2>
+                <img class="sticker sticker-reading-open" src="images/witches/reading-open.webp" width="124" height="159" alt="" aria-hidden="true" loading="lazy">
+            </div>
             <p class="weather-source">Checked against Forest Service, City of Sedona, NWS Flagstaff, and DarkSky listings as of Oct 22, 2026. Re-check passes, shuttle hours, and alerts before you leave Amara.</p>
 
             <div class="tips-grid">
@@ -2781,7 +2907,10 @@
 
         <!-- Map -->
         <section id="map">
-            <h2>Sedona Map</h2>
+            <div class="section-head">
+                <h2>Sedona Map</h2>
+                <img class="sticker sticker-crouch" src="images/witches/crouch.webp" width="114" height="177" alt="" aria-hidden="true" loading="lazy">
+            </div>
             <p class="weather-source">Stay, meals, and walks around town. Tap a pin or use the list for directions.</p>
             <div class="map-filters" role="group" aria-label="Filter map places">
                 <button type="button" class="chip is-on" data-filter="all">All</button>
