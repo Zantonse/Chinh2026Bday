@@ -1321,9 +1321,21 @@
             gap: 0.75rem;
         }
 
+        .section-head-left {
+            justify-content: flex-start;
+        }
+
         .section-head h2 {
             flex: 1;
             min-width: 0;
+        }
+
+        .section-head-left h2 {
+            flex: 0 1 auto;
+        }
+
+        .sticker-flip {
+            transform: scaleX(-1);
         }
 
         .sticker-end {
@@ -1338,7 +1350,7 @@
 
         .sticker-wand {
             width: 92px;
-            margin: 0.15rem 0 0 auto;
+            margin: 0.15rem auto 0 0;
         }
 
         .sticker-cat {
@@ -1349,7 +1361,7 @@
         .chooser-head {
             display: flex;
             align-items: flex-start;
-            justify-content: space-between;
+            justify-content: flex-start;
             gap: 0.75rem;
             margin-bottom: 0.75rem;
             padding-bottom: 0.45rem;
@@ -1658,6 +1670,11 @@
             .sticker-reading-open { width: 124px; }
             .sticker-crouch { width: 114px; }
 
+            .sticker-wand,
+            .sticker-peek {
+                margin-left: -1.35rem;
+            }
+
             nav {
                 overflow-x: visible;
             }
@@ -1771,6 +1788,28 @@
 
             .flight-col {
                 min-width: 0;
+            }
+
+            @media (min-width: 1280px) {
+                #sessions {
+                    position: relative;
+                    overflow: visible;
+                }
+
+                .sticker-wand {
+                    position: absolute;
+                    left: -4.5rem;
+                    top: 4.75rem;
+                    margin: 0;
+                }
+
+                .sticker-peek {
+                    margin-left: -4.5rem;
+                }
+
+                .sticker-crouch {
+                    margin-left: -1.5rem;
+                }
             }
 
             #for-craig-and-deenah {
@@ -1973,7 +2012,7 @@
                 </div>
                 </div>
             </div>
-            <img class="sticker sticker-wand" src="images/witches/wand.webp" width="140" height="170" alt="" aria-hidden="true" loading="lazy">
+            <img class="sticker sticker-wand sticker-flip" src="images/witches/wand.webp" width="140" height="170" alt="" aria-hidden="true" loading="lazy">
         </section>
 
         <!-- Flights -->
@@ -2128,8 +2167,8 @@
 
         <section id="day-chooser">
             <div class="chooser-head">
+                <img class="sticker sticker-peek sticker-flip" src="images/witches/peek.webp" width="104" height="185" alt="" aria-hidden="true" loading="lazy">
                 <h2>Day by day</h2>
-                <img class="sticker sticker-peek" src="images/witches/peek.webp" width="104" height="185" alt="" aria-hidden="true" loading="lazy">
             </div>
             <div class="day-switch" role="tablist" aria-label="Trip days">
                 <button type="button" role="tab" id="day-tab-fri" data-day="day1" aria-controls="day1" aria-selected="true" tabindex="0">
@@ -2837,9 +2876,9 @@
         </section>
 
         <section id="tips">
-            <div class="section-head">
+            <div class="section-head section-head-left">
+                <img class="sticker sticker-reading-open sticker-flip" src="images/witches/reading-open.webp" width="124" height="159" alt="" aria-hidden="true" loading="lazy">
                 <h2>Travel Tips</h2>
-                <img class="sticker sticker-reading-open" src="images/witches/reading-open.webp" width="124" height="159" alt="" aria-hidden="true" loading="lazy">
             </div>
             <p class="weather-source">Checked against Forest Service, City of Sedona, NWS Flagstaff, and DarkSky listings as of Oct 22, 2026. Re-check passes, shuttle hours, and alerts before you leave Amara.</p>
 
@@ -2907,9 +2946,9 @@
 
         <!-- Map -->
         <section id="map">
-            <div class="section-head">
+            <div class="section-head section-head-left">
+                <img class="sticker sticker-crouch sticker-flip" src="images/witches/crouch.webp" width="114" height="177" alt="" aria-hidden="true" loading="lazy">
                 <h2>Sedona Map</h2>
-                <img class="sticker sticker-crouch" src="images/witches/crouch.webp" width="114" height="177" alt="" aria-hidden="true" loading="lazy">
             </div>
             <p class="weather-source">Stay, meals, and walks around town. Tap a pin or use the list for directions.</p>
             <div class="map-filters" role="group" aria-label="Filter map places">
